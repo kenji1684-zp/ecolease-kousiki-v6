@@ -1473,3 +1473,7 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 #overview .lead.ov-lead .mph{display:inline-block}
 /* 修正指示 2026-11-20 15:51（設備リース）：特徴カードの見出しを大きく */
 #lease-features .feat-card h4{font-size:clamp(20px,1.9vw,23px);margin-bottom:12px}
+/* 修正指示 2026-11-20 16:11（ビルメンテナンス）：CTA見出しをスマホ・タブレットで1行に（20文字＋字間に合わせて文字サイズを画面幅から計算） */
+@media(max-width:900px){
+  .cta-band h2.cta-fit1{white-space:nowrap;font-size:min(48px,calc((100vw - 2 * var(--gutter)) / 21.6));letter-spacing:.04em}
+}
