@@ -1532,3 +1532,13 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 .wk-st{font-size:clamp(26px,2.8vw,36px)}
 /* 数字で見る実績：カード見出しを大きく（番号 01〜08 は削除） */
 .wk-sum .data-card .hd h3{font-size:clamp(19px,1.7vw,22px);letter-spacing:.05em}
+/* 修正指示 2026-11-20 16:57（施工実績）：棒グラフの数値を外したので、棒を右端まで伸ばす */
+.bars.nonum li{grid-template-columns:7.5em 1fr}
+.wk-rank.nonum li{grid-template-columns:1.6em 4.6em 1fr}
+.wk-rbars.nonum li{grid-template-columns:4.4em 1fr}
+/* 公共・民間の凡例を大きく */
+.wk-pp-legend{font-size:16px;gap:10px}
+.wk-pp-legend li{grid-template-columns:14px 1fr;gap:10px;color:var(--ink)}
+.wk-pp-legend li i{width:14px;height:14px;border-radius:3px}
+/* 施設の種類（全幅）は2列で */
+@media(min-width:900px){.wk-sum .data-card.full .wk-kinds{grid-template-columns:1fr 1fr;column-gap:48px}}
