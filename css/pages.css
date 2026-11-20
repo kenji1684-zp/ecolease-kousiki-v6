@@ -1503,3 +1503,24 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
   .flow.flow-h .fl-item:not(:last-child)::after{display:none}
 }
 .flow.flow-h .fl-item p .mph{display:inline-block;white-space:nowrap}
+/* 修正指示 2026-11-20 16:24（ビルメンテナンス）：「ご契約までの流れ」①→②→③→④の順に信号のように自動で点灯をくり返す（1工程1秒・4秒で1周） */
+.flow.flow-h .fl-item .fl-n{animation:flowLamp 4s linear infinite;transition:none}
+.flow.flow-h .fl-item:nth-child(2) .fl-n{animation-delay:1s}
+.flow.flow-h .fl-item:nth-child(3) .fl-n{animation-delay:2s}
+.flow.flow-h .fl-item:nth-child(4) .fl-n{animation-delay:3s}
+.flow.flow-h .fl-item:nth-child(1) .fl-n{animation-delay:0s}
+@keyframes flowLamp{
+  0%,22%{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 0 0 7px rgba(140,198,63,.22),0 0 22px 4px rgba(140,198,63,.55)}
+  27%,100%{background:var(--green-mist);border-color:var(--green);color:var(--green-deep);box-shadow:none}
+}
+@media(min-width:900px){
+  .flow.flow-h .fl-item{animation:flowCard 4s linear infinite}
+  .flow.flow-h .fl-item:nth-child(2){animation-delay:1s}
+  .flow.flow-h .fl-item:nth-child(3){animation-delay:2s}
+  .flow.flow-h .fl-item:nth-child(4){animation-delay:3s}
+  @keyframes flowCard{
+    0%,22%{border-color:#b9dc85;box-shadow:0 28px 60px -36px rgba(80,140,30,.6)}
+    27%,100%{border-color:var(--line);box-shadow:0 24px 50px -42px rgba(30,60,20,.55)}
+  }
+}
+@media (prefers-reduced-motion:reduce){.flow.flow-h .fl-item,.flow.flow-h .fl-item .fl-n{animation:none}}
