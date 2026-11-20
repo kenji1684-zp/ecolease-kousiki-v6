@@ -53,6 +53,7 @@
     if (t === 'HEADER') return 'ヘッダー';
     if (t === 'FOOTER') return 'フッター';
     if (t === 'P') return '文章';
+    if (/^(SPAN|B|STRONG|EM|SMALL|TIME)$/.test(t)) return '文字';
     return '要素';
   }
   function areaName(el) {
