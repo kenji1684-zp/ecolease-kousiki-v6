@@ -1425,7 +1425,7 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 /* 取扱設備：英字「Equipment」を削除し、「取扱設備」をその位置・書体で大きく */
 #equip .sec-head .eq-ttl{
   grid-column:1;grid-row:1;align-self:end;
-  font-family:"Cormorant Garamond",var(--serif);font-weight:600;
+  font-family:var(--serif);font-weight:600;
   font-size:clamp(30px,3.8vw,50px);line-height:1.15;letter-spacing:.06em;
   color:var(--ink);padding-bottom:0;
 }
@@ -1452,3 +1452,19 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 .top-rc-now span{animation:rcNowBlink 1.6s ease-in-out infinite}
 @keyframes rcNowBlink{0%,100%{opacity:1}50%{opacity:.25}}
 @media (prefers-reduced-motion:reduce){.top-rc-now span{animation:none}}
+
+/* ===== 修正指示 2026-11-20 15:42（事業案内） ===== */
+/* 英字見出し（Our Business／Business Overview）を削除し、日本語見出しをその位置・書体・大きさで表示 */
+.sec-head:not(.center) .ttl-big{
+  grid-column:1;grid-row:1;align-self:end;
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(30px,3.8vw,50px);line-height:1.2;letter-spacing:.06em;color:var(--ink);padding-bottom:0;
+}
+.sec-head.center .ttl-big{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(28px,3.6vw,48px);line-height:1.3;letter-spacing:.06em;color:var(--ink);
+}
+/* 早見表：見出しと表の事業名を大きく */
+.bo-compare-h{font-size:clamp(22px,2.2vw,28px);margin-bottom:18px}
+.bo-table thead th{font-size:clamp(18px,1.6vw,21px);padding-block:16px}
+.bo-table thead th .en{font-size:12px;margin-bottom:2px}
