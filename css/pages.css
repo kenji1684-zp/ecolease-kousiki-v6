@@ -1475,7 +1475,7 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 #lease-features .feat-card h4{font-size:clamp(20px,1.9vw,23px);margin-bottom:12px}
 /* 修正指示 2026-11-20 16:11（ビルメンテナンス）：CTA見出しをスマホ・タブレットで1行に（20文字＋字間に合わせて文字サイズを画面幅から計算） */
 @media(max-width:900px){
-  .cta-band h2.cta-fit1{white-space:nowrap;font-size:min(48px,calc((100vw - 2 * var(--gutter)) / 21.6));letter-spacing:.04em}
+  .cta-band h2.cta-fit1{white-space:nowrap;font-size:min(48px,calc((100vw - 2 * var(--gutter)) / var(--fit,21.6)));letter-spacing:.04em}
 }
 /* 修正指示 2026-11-20 16:19（ビルメンテナンス）：「ご契約までの流れ」PCは4つの工程を横並び・中央そろえのカードに。スマホは従来の縦並びのまま */
 .flow-wrap{max-width:860px}
@@ -1526,3 +1526,9 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 @media (prefers-reduced-motion:reduce){.flow.flow-h .fl-item,.flow.flow-h .fl-item .fl-n{animation:none}}
 /* 修正指示 2026-11-20 16:28（ビルメンテナンス）：見出しの一部を緑に。色はボタン「メンテナンスのご相談」の背景と同じ #8cc63f（--accent） */
 .txt-accent{color:var(--accent)}
+
+/* ===== 修正指示 2026-11-20 16:37（施工実績） ===== */
+/* 「実績を探す」見出しを大きく */
+.wk-st{font-size:clamp(26px,2.8vw,36px)}
+/* 数字で見る実績：カード見出しを大きく（番号 01〜08 は削除） */
+.wk-sum .data-card .hd h3{font-size:clamp(19px,1.7vw,22px);letter-spacing:.05em}
