@@ -1446,5 +1446,5 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
   .top-rc .top-rc-hiring .rc-pill{letter-spacing:.3em;padding:.26em .7em .26em .9em}
 }
 /* 円の外側の工程名（03 資材準備・出荷／06 解体・回収）が右の一覧や画面端にかからないよう、図に左右の余白 */
-@media(min-width:1001px){.ac-art-wrap{padding-inline:clamp(24px,3vw,44px)}}
-@media(min-width:641px) and (max-width:1000px){.ac-art-wrap{padding-inline:clamp(40px,7vw,64px)}}
+/* 修正指示 2026-11-20 15:20：円の外側の工程名（見積り〜清掃・整備の7つ）を削除。右の一覧と重複のため */
+.ac-lbl{display:none}

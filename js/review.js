@@ -44,7 +44,10 @@
     var t = el.tagName;
     if (/^H[1-6]$/.test(t)) return '見出し';
     if (t === 'IMG' || t === 'FIGURE' || t === 'VIDEO') return '画像';
-    if (t === 'SVG' || el.closest('svg')) return '図・イラスト';
+    if (t.toLowerCase() === 'text') return '図の中の文字';
+    if (t.toLowerCase() === 'g') return '図のパーツ';
+    if (t.toLowerCase() === 'svg') return '図・イラスト（全体）';
+    if (el.closest('svg')) return '図のパーツ';
     if (t === 'A' || t === 'BUTTON') return el.classList.contains('btn') ? 'ボタン' : 'リンク';
     if (t === 'LI') return 'リストの項目';
     if (t === 'TD' || t === 'TH' || t === 'DT' || t === 'DD') return '表の項目';
@@ -212,7 +215,11 @@
   function target(e) {
     var el = e.target;
     if (!el || el.closest('.rv-ui')) return null;
-    if (el.closest('svg') && el.tagName.toLowerCase() !== 'svg') el = el.closest('svg');
+    // 図（SVG）の中は、文字やパーツ単位で選べるようにする（図全体は枠の余白部分をクリック）
+    if (el.closest('svg') && el.tagName.toLowerCase() !== 'svg') {
+      var part = el.closest('text') || el.closest('g[class],g[data-i]') || el.closest('g');
+      return part && part.closest('svg') ? part : el.closest('svg');
+    }
     var t = el.closest(PICK);
     return t || el;
   }
