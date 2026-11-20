@@ -22,6 +22,15 @@
   function save() { ls(KEY, JSON.stringify(mem)); }
   load();
   var PAGE = (location.pathname.split('/').pop() || 'index.html');
+  // サイトマップの全ページ（ツールバーの「ページ移動」に表示）
+  var PAGES = [
+    ['index.html', 'トップページ'], ['jigyo.html', '事業案内'], ['lease.html', '設備リース'], ['rental.html', '設備レンタル'],
+    ['maintenance.html', 'ビルメンテナンス'], ['works.html', '施工実績'], ['company.html', '会社概要'],
+    ['release.html', 'RE-LEASE 再リースまでの流れ'], ['licence.html', '保有資格'], ['environment.html', '環境方針'],
+    ['sdgs.html', 'SDGsへの取り組み'], ['recruit.html', '採用情報'], ['interview.html', '社員インタビュー'],
+    ['data.html', 'データで見るエコリース'], ['news.html', 'お知らせ'], ['news-detail.html', 'お知らせ（記事ページ）'],
+    ['contact.html', 'お問い合わせ'], ['privacy.html', 'プライバシーポリシー']
+  ];
   function pageTitle() {
     if (PAGE === 'index.html') return 'トップページ';
     var t = (document.title || '').split(/[｜|]/)[0].trim();
@@ -106,6 +115,7 @@
     '.rv-bar button:hover{background:#4d5c45}' +
     '.rv-bar button.pri{background:#8cc63f;color:#1f2a1b}' +
     '.rv-bar button.pri:hover{background:#a3d65e}' +
+    '.rv-bar select.rv-go{appearance:auto;border:0;border-radius:8px;padding:8px 6px;font-size:13px;font-weight:600;background:#fff;color:#1f2a1b;max-width:210px;cursor:pointer}' +
     '.rv-bar .cnt{background:#e8402e;border-radius:99px;padding:1px 8px;font-size:12px;margin-left:4px}' +
     '.rv-pop{position:fixed;z-index:2147483601;width:min(380px,calc(100vw - 24px));background:#fff;color:#222;border-radius:12px;box-shadow:0 16px 50px rgba(0,0,0,.35);padding:14px;font-size:13px}' +
     '.rv-pop .loc{font-size:12px;color:#5b6b53;margin-bottom:4px}' +
@@ -141,7 +151,7 @@
     'html.rv-pick, html.rv-pick *{cursor:crosshair!important}' +
     'html.rv-pick .rv-ui, html.rv-pick .rv-ui *{cursor:auto!important}' +
     'html.rv-pick .rv-ui button{cursor:pointer!important}' +
-    '@media(max-width:600px){.rv-bar{left:8px;right:8px;bottom:8px;gap:4px;padding:6px;flex-wrap:nowrap}.rv-bar button{padding:8px 8px;font-size:12px;white-space:nowrap}.rv-bar .ttl{padding:0 2px}.rv-pop{left:8px!important;right:8px;width:auto}.rv-pop textarea{min-height:72px;font-size:16px}.rv-bar .ttl span{display:none}.rv-panel{left:8px;right:8px;top:8px;width:auto;bottom:70px}}';
+    '@media(max-width:600px){.rv-bar{left:8px;right:8px;bottom:8px;gap:4px;padding:6px;flex-wrap:wrap}.rv-bar select.rv-go{flex:1 1 100%;max-width:none;order:-1}.rv-bar button{padding:8px 8px;font-size:12px;white-space:nowrap}.rv-bar .ttl{padding:0 2px}.rv-pop{left:8px!important;right:8px;width:auto}.rv-pop textarea{min-height:72px;font-size:16px}.rv-bar .ttl span{display:none}.rv-panel{left:8px;right:8px;top:8px;width:auto;bottom:70px}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   /* ---------- UI ---------- */
@@ -150,6 +160,7 @@
   var layer = document.createElement('div'); layer.className = 'rv-ui'; document.body.appendChild(layer);
   var bar = document.createElement('div'); bar.className = 'rv-bar rv-ui';
   bar.innerHTML = '<div class="ttl"><i></i><span>修正指示モード</span></div>' +
+    '<select class="rv-go" aria-label="ページ移動"></select>' +
     '<button type="button" data-a="mode">選択中</button>' +
     '<button type="button" data-a="page">ページ全体へ</button>' +
     '<button type="button" data-a="list">一覧<span class="cnt">0</span></button>' +
@@ -174,6 +185,13 @@
   function counts() {
     var c = mem.length;
     bar.querySelector('.cnt').textContent = c;
+    var sel = bar.querySelector('.rv-go'), html = '';
+    PAGES.forEach(function (pg) {
+      var n = mem.filter(function (m) { return m.page === pg[0]; }).length;
+      html += '<option value="' + pg[0] + '"' + (pg[0] === PAGE ? ' selected' : '') + '>' + (pg[0] === PAGE ? '▶ ' : '') + pg[1] + (n ? '（' + n + '件）' : '') + '</option>';
+    });
+    if (!PAGES.some(function (pg) { return pg[0] === PAGE; })) html = '<option selected>▶ ' + esc(pageTitle()) + '</option>' + html;
+    sel.innerHTML = html;
   }
   function numOf(item) {
     var list = mem.filter(function (m) { return m.page === item.page; });
@@ -403,6 +421,9 @@
         ls(ON, null); location.href = location.pathname + location.hash;
       }
     }
+  });
+  bar.querySelector('.rv-go').addEventListener('change', function (e) {
+    var v = e.target.value; if (v && /\.html$/.test(v) && v !== PAGE) location.href = v;
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closePop(); } });
   setMode(true);
