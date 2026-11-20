@@ -1468,3 +1468,6 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 .bo-compare-h{font-size:clamp(22px,2.2vw,28px);margin-bottom:18px}
 .bo-table thead th{font-size:clamp(18px,1.6vw,21px);padding-block:16px}
 .bo-table thead th .en{font-size:12px;margin-bottom:2px}
+/* 修正指示 2026-11-20 15:46：早見表リード文「タブを切り替えて、」から改行。文節（.mph）の途中では折り返さない */
+#overview .lead.ov-lead{max-width:none}
+#overview .lead.ov-lead .mph{display:inline-block}
