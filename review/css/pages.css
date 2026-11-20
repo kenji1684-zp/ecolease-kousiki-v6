@@ -1542,3 +1542,52 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 .wk-pp-legend li i{width:14px;height:14px;border-radius:3px}
 /* 施設の種類（全幅）は2列で */
 @media(min-width:900px){.wk-sum .data-card.full .wk-kinds{grid-template-columns:1fr 1fr;column-gap:48px}}
+
+/* ===== 修正指示 2026-11-20 17:32（採用情報 recruit.html） ===== */
+/* ページ上部：「募集中」を横長の大きなラベルにし、幅を下の職種「…中途採用・正社員」の行に合わせる */
+.rc-hire{display:inline-grid;gap:14px;margin-bottom:6px;max-width:100%}
+.rc-pill.rc-pill-xl{
+  display:flex;justify-content:center;align-items:center;gap:.4em;
+  font-family:var(--serif);font-weight:800;font-size:clamp(28px,3.2vw,42px);line-height:1;
+  letter-spacing:.5em;padding:.3em .5em .3em 1em;border-radius:.28em;
+  box-shadow:0 16px 34px -22px rgba(40,80,20,.6);
+}
+.rc-pill.rc-pill-xl::before{width:.3em;height:.3em;margin-right:.1em}
+.rc-hire .rc-now{display:flex;flex-wrap:wrap;justify-content:center;gap:0;font-size:clamp(17px,1.6vw,20px);letter-spacing:.06em}
+.rc-hire .rc-now span{white-space:nowrap}
+@media(max-width:520px){.rc-pill.rc-pill-xl{letter-spacing:.36em}}
+
+/* 工事課ってどんなところ：4枚のカードを信号のように順番に点灯（番号は削除） */
+.rc-point{animation:rcPointLamp 4s linear infinite}
+.rc-point:nth-child(2){animation-delay:1s}
+.rc-point:nth-child(3){animation-delay:2s}
+.rc-point:nth-child(4){animation-delay:3s}
+@keyframes rcPointLamp{
+  0%,22%{background:var(--green-mist);border-color:var(--accent);box-shadow:0 0 0 3px rgba(140,198,63,.18),0 22px 44px -30px rgba(80,140,30,.6)}
+  27%,100%{background:#fff;border-color:var(--line);box-shadow:none}
+}
+.rc-point h3{margin-top:0}
+
+/* 仕事内容：「未経験でも安心」を大きく */
+#rc-work .rc-note{font-size:clamp(16px,1.4vw,18px);padding:18px 22px}
+#rc-work .rc-note b{font-size:clamp(18px,1.6vw,21px);margin-bottom:4px}
+
+/* 先輩の声：「工事課 係長」を大きく・点滅 */
+#rc-voice .iv .meta .dept{font-size:clamp(15px,1.3vw,17px);padding:6px 14px;animation:rcDeptBlink 1.6s ease-in-out infinite}
+@keyframes rcDeptBlink{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* 働く魅力：数字（平均年齢など）を削除し、「データで見るエコリース」を大きく */
+.rc-kpi{justify-items:center;margin-top:clamp(32px,4vw,52px)}
+.rc-datalink{font-family:var(--serif);font-weight:700;font-size:clamp(19px,1.9vw,24px);letter-spacing:.08em;padding:14px 30px;border:1.5px solid var(--accent);border-radius:99px;background:#fff}
+.rc-datalink:hover{background:var(--green-mist)}
+
+/* 社長メッセージ：署名を大きく */
+#rc-message .rc-sign{font-size:clamp(24px,2.2vw,30px)}
+#rc-message .rc-sign small{font-size:clamp(14px,1.2vw,16px);margin-bottom:4px}
+
+/* 応募：電話の表示を大きく */
+.rc-tel span{font-size:clamp(14.5px,1.2vw,16px)}
+.rc-tel a{font-size:clamp(34px,3.2vw,42px)}
+.rc-tel small{font-size:clamp(14px,1.1vw,15px)}
+
+@media (prefers-reduced-motion:reduce){.rc-point,#rc-voice .iv .meta .dept{animation:none}}
