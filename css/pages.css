@@ -1291,3 +1291,123 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 .os-core b{color:var(--green-deep)}
 .os-core small{color:var(--ink-faint)}
 .os-etc{color:var(--ink-faint);opacity:1}
+
+/* ============================================================
+   採用ページ（工事課・施工管理に特化）2026-11-20
+   recruit.html 1ページで「どんなところ → 仕事 → 1日 → 先輩 → 魅力 → 社長 → 要項 → 応募」まで完結
+   ============================================================ */
+.rc-now{font-family:var(--serif);font-weight:700;font-size:clamp(16px,1.6vw,19px);color:var(--ink)!important;display:flex;flex-wrap:wrap;align-items:center;gap:10px;line-height:1.6!important}
+.rc-pill{display:inline-flex;align-items:center;gap:6px;background:var(--green-deep);color:#fff;font-size:12.5px;letter-spacing:.12em;padding:4px 12px 4px 10px;border-radius:99px}
+.rc-pill::before{content:"";width:7px;height:7px;border-radius:50%;background:#c7f07e;animation:rcBlink 1.6s ease-in-out infinite}
+@keyframes rcBlink{50%{opacity:.25}}
+.rc-hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.rc-anchors a.on{background:var(--green-deep);color:#fff;border-color:var(--green-deep)}
+
+.rc-points{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,20px);margin-top:clamp(28px,4vw,48px)}
+.rc-point{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(22px,2.4vw,30px) clamp(18px,2vw,24px);position:relative;overflow:hidden}
+.rc-point .n{font-family:var(--latin);font-size:40px;font-weight:600;line-height:1;color:var(--green-wash);position:absolute;right:14px;top:10px}
+.rc-point h3{font-family:var(--serif);font-weight:700;font-size:clamp(17px,1.5vw,19px);line-height:1.55;color:var(--green-deep);margin:14px 0 10px;position:relative}
+.rc-point p{font-size:14.5px;line-height:1.95;color:var(--ink-soft);position:relative}
+.rc-facts{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(18px,2.4vw,28px);background:var(--green-mist);border:1px solid var(--green-wash);border-radius:14px}
+.rc-facts li{padding:20px 12px;text-align:center}
+.rc-facts li+li{border-left:1px solid var(--green-wash)}
+.rc-facts b{display:block;font-family:var(--serif);font-weight:800;font-size:clamp(24px,2.6vw,32px);color:var(--green-deep);line-height:1.2}
+.rc-facts b small{font-size:.5em;margin-left:2px;color:var(--ink)}
+.rc-facts span{font-family:var(--serif);font-size:13px;color:var(--ink-soft);letter-spacing:.05em}
+
+.rc-roles{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.rc-roles li{font-family:var(--serif);font-weight:600;font-size:14px;padding:7px 14px;border-radius:99px;background:#fff;border:1px solid var(--green-wash);color:var(--green-deep)}
+.rc-note{margin-top:18px;padding:14px 18px;border-left:3px solid var(--green);background:#fff;border-radius:0 10px 10px 0}
+.rc-note b{display:block;font-family:var(--serif);color:var(--green-deep);margin-bottom:2px}
+
+.rc-day{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,4vw,64px)}
+.rc-tl{list-style:none;position:relative;margin:0;padding:0}
+.rc-tl::before{content:"";position:absolute;left:71px;top:12px;bottom:12px;width:2px;background:var(--green-wash)}
+.rc-tl li{display:grid;grid-template-columns:52px 1fr;gap:42px;align-items:start;padding:12px 0;position:relative}
+.rc-tl li::before{content:"";position:absolute;left:66px;top:20px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--green)}
+.rc-tl li.rest::before{border-color:var(--green-wash);background:var(--green-wash)}
+.rc-tl li.end::before{background:var(--green-deep);border-color:var(--green-deep)}
+.rc-tl time{font-family:var(--latin);font-weight:600;font-size:18px;color:var(--green-deep);text-align:right;line-height:1.5}
+.rc-tl p{font-size:15px;line-height:1.85;padding-top:2px}
+.rc-tl li.rest p{color:var(--ink-faint)}
+
+.rc-q{font-family:var(--serif);font-weight:700;color:var(--green-deep);margin-top:14px}
+.rc-q:first-child{margin-top:0}
+.rc-q::before{content:"Q. ";font-family:var(--latin)}
+
+.rc-kpi{margin-top:clamp(28px,4vw,48px);display:grid;gap:14px;justify-items:end}
+.rc-kpi .kpi-strip{width:100%}
+
+.rc-quote{margin:14px 0;padding:14px 20px;font-family:var(--serif);font-weight:600;color:var(--ink);background:#fff;border-left:3px solid var(--green);border-radius:0 10px 10px 0;line-height:1.9}
+.rc-sign{margin-top:22px;font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:.2em;text-align:right}
+.rc-sign small{display:block;font-size:12.5px;letter-spacing:.12em;color:var(--ink-soft);font-weight:500}
+
+.rc-table th{width:200px}
+
+.rc-entry{background:linear-gradient(180deg,var(--green-mist),#fff)}
+.rc-entry-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,72px);align-items:start}
+.rc-entry-lead .en{font-family:var(--latin);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-deep)}
+.rc-entry-lead h2{font-family:var(--serif);font-weight:800;font-size:clamp(24px,2.8vw,34px);line-height:1.5;margin:8px 0 16px}
+.rc-entry-lead p{color:var(--ink-soft);line-height:2}
+.rc-tel{margin-top:26px;padding:20px 22px;background:#fff;border:1px solid var(--line);border-radius:12px;display:grid;gap:4px}
+.rc-tel span{font-size:13px;color:var(--ink-soft)}
+.rc-tel a{font-family:var(--latin);font-weight:600;font-size:30px;color:var(--green-deep);letter-spacing:.04em}
+.rc-tel small{font-size:12.5px;color:var(--ink-faint)}
+.rc-form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(22px,3vw,40px);box-shadow:0 24px 50px -40px rgba(30,60,20,.45)}
+.rc-form input[readonly]{background:var(--green-mist);color:var(--green-deep);font-weight:600}
+.rc-radios{display:flex;flex-wrap:wrap;gap:10px}
+.form-row .rc-radios label{margin:0;font-weight:500;font-family:var(--serif-body);font-size:14.5px;cursor:pointer}
+.rc-radios label{position:relative}
+.rc-radios input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none}
+.rc-radios span{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:8px;background:#fff;transition:.2s}
+.rc-radios input:checked+span{border-color:var(--green-deep);background:var(--green-deep);color:#fff}
+.rc-radios input:focus-visible+span{box-shadow:0 0 0 3px var(--green-pale)}
+.privacy-row.invalid label{color:#d2503f}
+.rc-submit{margin-top:22px}
+.rc-submit .btn{width:100%;justify-content:center}
+
+@media(max-width:1000px){.rc-points{grid-template-columns:1fr 1fr}}
+@media(max-width:780px){
+  .rc-day{grid-template-columns:1fr}
+  .rc-entry-grid{grid-template-columns:1fr}
+  .rc-facts{grid-template-columns:1fr 1fr}
+  .rc-facts li:nth-child(3){border-left:none}
+  .rc-facts li:nth-child(n+3){border-top:1px solid var(--green-wash)}
+}
+@media(max-width:520px){
+  .rc-points{grid-template-columns:1fr}
+  .rc-tl::before{left:57px}
+  .rc-tl li{grid-template-columns:42px 1fr;gap:36px}
+  .rc-tl li::before{left:52px}
+  .rc-tl time{font-size:16px}
+  .rc-hero-btns .btn{flex:1 1 100%;justify-content:center}
+}
+
+/* TOP「採用情報」帯（2026-11-20）：濃い緑で目立たせる */
+.top-rc{position:relative;overflow:hidden;background:var(--green-deep);color:#fff;padding-block:clamp(64px,8vw,112px)}
+.top-rc::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 85% 10%,rgba(140,198,63,.45),transparent 60%),radial-gradient(60% 80% at 0% 100%,rgba(0,0,0,.18),transparent 60%)}
+.top-rc-deco{position:absolute;right:-.06em;bottom:-.22em;font-family:var(--latin);font-weight:600;font-size:clamp(90px,16vw,240px);letter-spacing:.04em;color:rgba(255,255,255,.07);line-height:1;pointer-events:none}
+.top-rc-in{position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.top-rc-now{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:clamp(15px,1.5vw,18px)}
+.top-rc .rc-pill{background:#fff;color:var(--green-deep)}
+.top-rc .rc-pill::before{background:var(--green)}
+.top-rc h2{font-family:var(--serif);font-weight:800;font-size:clamp(30px,4.4vw,56px);line-height:1.4;letter-spacing:.04em;margin:18px 0 18px}
+.top-rc-lead{color:rgba(255,255,255,.88);line-height:2.05;max-width:36em}
+.top-rc-btns{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:28px}
+.top-rc .btn-light{color:var(--green-deep);font-weight:700;padding-inline:28px}
+.top-rc-sub{font-family:var(--serif);font-weight:600;color:#fff;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:3px}
+.top-rc-sub:hover{border-color:#fff}
+.top-rc-facts{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.top-rc-facts li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:22px 16px;text-align:center;backdrop-filter:blur(2px)}
+.top-rc-facts b{display:block;font-family:var(--serif);font-weight:800;font-size:clamp(26px,2.8vw,36px);line-height:1.2}
+.top-rc-facts b small{font-size:.5em;margin-left:2px;opacity:.9}
+.top-rc-facts span{font-family:var(--serif);font-size:13px;opacity:.85;letter-spacing:.05em}
+@media(max-width:860px){.top-rc-in{grid-template-columns:1fr}}
+
+/* ヘッダー「採用情報」に“募集中”バッジ（全ページ） */
+.nav-recruit{position:relative}
+.nav-hiring{position:absolute;left:50%;top:-11px;transform:translateX(-50%);font-family:var(--serif);font-size:10px;font-weight:700;letter-spacing:.08em;line-height:1;white-space:nowrap;color:#fff;background:var(--green-deep);padding:3px 7px;border-radius:99px;pointer-events:none}
+.drawer .nav-hiring{position:static;transform:none;margin-left:8px;vertical-align:middle}
+[id^="rc-"]{scroll-margin-top:90px}
+@media(max-width:640px){.rc-table th{width:100%}}
+@media(max-width:780px){#rc-message .ph{max-width:300px;margin-inline:auto;width:100%}}

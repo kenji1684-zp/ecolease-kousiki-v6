@@ -702,3 +702,38 @@
   });
   render();
 })();
+
+/* ============================================================
+   採用ページ（recruit.html）応募フォーム 2026-11-20
+   ※ 送信先（メール送信・フォームサービス）は未接続。入力チェック後に完了表示のみ。
+   ============================================================ */
+(function () {
+  var f = document.getElementById('rcForm');
+  if (!f) return;
+  var ok = document.getElementById('rcSuccess');
+  var pv = document.getElementById('rcPrivacy'), prow = document.getElementById('rcPrivacyRow');
+  function valid(row) {
+    var el = row.querySelector('[data-required]');
+    if (!el) return true;
+    var v = el.value.trim(), t = el.getAttribute('data-type'), good = !!v;
+    if (good && t === 'email') good = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    if (good && t === 'tel') good = /^[0-9０-９\-－ ]{10,14}$/.test(v);
+    row.classList.toggle('invalid', !good);
+    return good;
+  }
+  [].forEach.call(f.querySelectorAll('.form-row'), function (row) {
+    var el = row.querySelector('[data-required]');
+    if (el) ['blur', 'input'].forEach(function (ev) { el.addEventListener(ev, function () { if (ev === 'blur' || row.classList.contains('invalid')) valid(row); }); });
+  });
+  pv.addEventListener('change', function () { prow.classList.toggle('invalid', !pv.checked); });
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var all = true, first = null;
+    [].forEach.call(f.querySelectorAll('.form-row'), function (row) { var g = valid(row); if (!g && !first) first = row; all = all && g; });
+    if (!pv.checked) { prow.classList.add('invalid'); all = false; if (!first) first = prow; }
+    if (!all) { window.scrollTo({ top: first.getBoundingClientRect().top + window.scrollY - 130, behavior: 'smooth' }); return; }
+    f.style.display = 'none';
+    ok.classList.add('show');
+    window.scrollTo({ top: ok.getBoundingClientRect().top + window.scrollY - 150, behavior: 'smooth' });
+  });
+})();

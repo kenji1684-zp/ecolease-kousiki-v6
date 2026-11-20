@@ -9,11 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=2026111802">
-<link rel="stylesheet" href="css/v3.css?v=2026111802">
-<link rel="stylesheet" href="css/v4.css?v=2026111802">
-<link rel="stylesheet" href="css/v5.css?v=2026111802">
-<link rel="stylesheet" href="css/pages.css?v=2026111802">
+<link rel="stylesheet" href="css/style.css?v=2026112002">
+<link rel="stylesheet" href="css/v3.css?v=2026112002">
+<link rel="stylesheet" href="css/v4.css?v=2026112002">
+<link rel="stylesheet" href="css/v5.css?v=2026112002">
+<link rel="stylesheet" href="css/pages.css?v=2026112002">
 </head>
 <body data-screen-label="トップページ">
 
@@ -59,9 +59,10 @@
       <a href="works.html" class="nav-link">施工実績</a>
       <a href="company.html" class="nav-link">会社概要</a>
       <div class="nav-dd">
-        <a href="recruit.html" class="nav-link" aria-haspopup="true">採用情報<i class="caret" aria-hidden="true"></i></a>
+        <a href="recruit.html" class="nav-link nav-recruit" aria-haspopup="true">採用情報<span class="nav-hiring">募集中</span><i class="caret" aria-hidden="true"></i></a>
         <div class="nav-dd-menu">
           <a href="recruit.html" class="all"><b>採用トップ</b><span>Recruit</span></a>
+          <a href="recruit.html#rc-req"><b>工事課 募集要項</b><span>Requirements</span></a>
           <a href="interview.html"><b>社員インタビュー</b><span>Interview</span></a>
           <a href="data.html"><b>データで見るエコリース</b><span>Data</span></a>
         </div>
@@ -81,7 +82,7 @@
   <a href="maintenance.html" class="sub">ビルメンテナンス<span class="en">Maintenance</span></a>
   <a href="works.html">施工実績<span class="en">Works</span></a>
   <a href="company.html">会社概要<span class="en">Company</span></a>
-  <a href="recruit.html">採用情報<span class="en">Recruit</span></a>
+  <a href="recruit.html">採用情報<span class="nav-hiring">募集中</span><span class="en">Recruit</span></a>
   <a href="interview.html" class="sub">社員インタビュー<span class="en">Interview</span></a>
   <a href="data.html" class="sub">データで見るエコリース<span class="en">Data</span></a>
   <a href="contact.html">お問い合わせ<span class="en">Contact</span></a>
@@ -454,6 +455,28 @@
   </div>
 </section>
 
+<!-- ============ RECRUIT（2026-11-20 追加：採用情報を目立たせる／工事課・施工管理 募集中）============ -->
+<section class="top-rc" id="recruit" data-screen-label="採用情報">
+  <div class="top-rc-deco" aria-hidden="true">RECRUIT</div>
+  <div class="wrap top-rc-in">
+    <div class="top-rc-body reveal">
+      <p class="top-rc-now bx"><span class="rc-pill">募集中</span>工事課<wbr>（施工管理）<wbr>／<wbr>中途採用・<wbr>正社員</p>
+      <h2 class="bx">現場を<wbr>動かす人を、<br><wbr>募集しています。</h2>
+      <p class="top-rc-lead bx">仮設<wbr>（プレハブ）<wbr>施設への<wbr>設備設置を、<wbr>協力会社様と<wbr>一緒に<wbr>段取りする<wbr>仕事です。<wbr>経験の<wbr>有無は<wbr>問いません。<wbr>マニュアルと<wbr>現場研修で、<wbr>一から<wbr>覚えられます。</p>
+      <div class="top-rc-btns">
+        <a class="btn btn-light" href="recruit.html">工事課の採用情報を見る <span class="arr">→</span></a>
+        <a class="top-rc-sub" href="recruit.html#rc-entry">応募・職場見学の申込み <span class="arr">→</span></a>
+      </div>
+    </div>
+    <ul class="top-rc-facts reveal d1">
+      <li><b>120<small>日</small></b><span>年間休日</span></li>
+      <li><b>経験<small>不問</small></b><span>高卒以上</span></li>
+      <li class="bx"><b>週末<small>は<wbr>家に</small></b><span><wbr>出張が<wbr>あっても</span></li>
+      <li class="bx"><b>3<small>拠点</small></b><span>徳島・<wbr>関西・<wbr>中部</span></li>
+    </ul>
+  </div>
+</section>
+
 <!-- ============ CTA ============ -->
 <section class="cta-band">
   <div class="deco">ECO LEASE</div>
@@ -515,12 +538,12 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=2026111802"></script>
-<script src="js/motion.js?v=2026111802"></script>
-<script src="js/v3.js?v=2026111802"></script>
-<script src="js/lenis.js?v=2026111802"></script>
-<script src="js/v4.js?v=2026111802"></script>
-<script src="js/v5.js?v=2026111802"></script>
-<script src="js/pages.js?v=2026111802"></script>
+<script src="js/script.js?v=2026112002"></script>
+<script src="js/motion.js?v=2026112002"></script>
+<script src="js/v3.js?v=2026112002"></script>
+<script src="js/lenis.js?v=2026112002"></script>
+<script src="js/v4.js?v=2026112002"></script>
+<script src="js/v5.js?v=2026112002"></script>
+<script src="js/pages.js?v=2026112002"></script>
 </body>
 </html>
