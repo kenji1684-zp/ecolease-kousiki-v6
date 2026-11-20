@@ -1411,3 +1411,40 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 [id^="rc-"]{scroll-margin-top:90px}
 @media(max-width:640px){.rc-table th{width:100%}}
 @media(max-width:780px){#rc-message .ph{max-width:300px;margin-inline:auto;width:100%}}
+
+/* ===== 修正指示 2026-11-20 15:15 ===== */
+/* オールインワン：工程名を大きく・英字を削除 */
+.ac-list li{grid-template-columns:2.4em 1fr;align-items:center;padding:12px 16px}
+.ac-list li .n{font-size:17px}
+.ac-list li b{font-size:clamp(18px,1.5vw,20px)}
+@media(max-width:640px){
+  .ac-list li{grid-template-columns:1.7em 1fr;gap:6px;padding:10px 8px}
+  .ac-list li .n{font-size:14px}
+  .ac-list li b{font-size:16px;letter-spacing:0;white-space:nowrap}
+}
+/* 取扱設備：英字「Equipment」を削除し、「取扱設備」をその位置・書体で大きく */
+#equip .sec-head .eq-ttl{
+  grid-column:1;grid-row:1;align-self:end;
+  font-family:"Cormorant Garamond",var(--serif);font-weight:600;
+  font-size:clamp(30px,3.8vw,50px);line-height:1.15;letter-spacing:.06em;
+  color:var(--ink);padding-bottom:0;
+}
+/* TOP採用帯：「募集中」を見出しと同じ大きさの横長ラベルに、職種はその下へ */
+.top-rc-hiring{margin:0 0 16px}
+.top-rc .top-rc-hiring .rc-pill{
+  font-family:var(--serif);font-weight:800;
+  font-size:clamp(30px,4.4vw,56px);line-height:1;letter-spacing:.42em;
+  padding:.24em .9em .24em 1.1em;gap:.4em;border-radius:.3em;
+  background:#fff;color:var(--green-deep);
+  box-shadow:0 18px 40px -22px rgba(0,0,0,.45);
+}
+.top-rc .top-rc-hiring .rc-pill::before{width:.32em;height:.32em;background:#8cc63f;margin-right:.1em}
+.top-rc-now{display:flex;flex-wrap:wrap;gap:0;font-size:clamp(16px,1.7vw,20px);letter-spacing:.06em}
+.top-rc-now span{white-space:nowrap}
+.top-rc h2{margin-top:14px}
+@media(max-width:520px){
+  .top-rc .top-rc-hiring .rc-pill{letter-spacing:.3em;padding:.26em .7em .26em .9em}
+}
+/* 円の外側の工程名（03 資材準備・出荷／06 解体・回収）が右の一覧や画面端にかからないよう、図に左右の余白 */
+@media(min-width:1001px){.ac-art-wrap{padding-inline:clamp(24px,3vw,44px)}}
+@media(min-width:641px) and (max-width:1000px){.ac-art-wrap{padding-inline:clamp(40px,7vw,64px)}}
