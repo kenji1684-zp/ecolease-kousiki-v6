@@ -1471,3 +1471,5 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 /* 修正指示 2026-11-20 15:46：早見表リード文「タブを切り替えて、」から改行。文節（.mph）の途中では折り返さない */
 #overview .lead.ov-lead{max-width:none}
 #overview .lead.ov-lead .mph{display:inline-block}
+/* 修正指示 2026-11-20 15:51（設備リース）：特徴カードの見出しを大きく */
+#lease-features .feat-card h4{font-size:clamp(20px,1.9vw,23px);margin-bottom:12px}
