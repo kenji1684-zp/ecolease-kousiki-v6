@@ -1477,3 +1477,29 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 @media(max-width:900px){
   .cta-band h2.cta-fit1{white-space:nowrap;font-size:min(48px,calc((100vw - 2 * var(--gutter)) / 21.6));letter-spacing:.04em}
 }
+/* 修正指示 2026-11-20 16:19（ビルメンテナンス）：「ご契約までの流れ」PCは4つの工程を横並び・中央そろえのカードに。スマホは従来の縦並びのまま */
+.flow-wrap{max-width:860px}
+@media(min-width:900px){
+  .flow-wrap{max-width:1300px}
+  .flow.flow-h{grid-template-columns:repeat(4,1fr);gap:clamp(22px,2.4vw,36px);margin-top:clamp(8px,1.4vw,18px)}
+  .flow.flow-h .fl-item{
+    position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;
+    padding:clamp(30px,2.8vw,40px) clamp(18px,1.8vw,26px) clamp(28px,2.6vw,36px);
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    box-shadow:0 24px 50px -42px rgba(30,60,20,.55);
+  }
+  .flow.flow-h .fl-item .fl-n{width:72px;height:72px;font-size:26px;background:var(--green-mist);border-width:2px}
+  .flow.flow-h .fl-item h4{font-size:clamp(19px,1.7vw,22px);margin-bottom:12px;letter-spacing:.04em}
+  .flow.flow-h .fl-item p{font-size:15px;line-height:1.95;text-align:center}
+  /* 工程と工程のあいだの矢印 */
+  .flow.flow-h .fl-item:not(:last-child)::after{
+    content:"";position:absolute;top:calc(clamp(30px,2.8vw,40px) + 36px);right:calc(-1 * clamp(22px,2.4vw,36px) / 2 - 7px);
+    width:14px;height:14px;border-top:2px solid var(--green);border-right:2px solid var(--green);transform:translateY(-50%) rotate(45deg);
+  }
+}
+@media(min-width:900px) and (max-width:1099px){
+  .flow-wrap{max-width:860px}
+  .flow.flow-h{grid-template-columns:repeat(2,1fr)}
+  .flow.flow-h .fl-item:not(:last-child)::after{display:none}
+}
+.flow.flow-h .fl-item p .mph{display:inline-block;white-space:nowrap}
