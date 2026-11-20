@@ -1524,3 +1524,5 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
   }
 }
 @media (prefers-reduced-motion:reduce){.flow.flow-h .fl-item,.flow.flow-h .fl-item .fl-n{animation:none}}
+/* 修正指示 2026-11-20 16:28（ビルメンテナンス）：見出しの一部を緑に。色はボタン「メンテナンスのご相談」の背景と同じ #8cc63f（--accent） */
+.txt-accent{color:var(--accent)}
