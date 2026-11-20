@@ -373,11 +373,20 @@
       ta.style.cssText = 'position:fixed;left:-9999px;top:0'; document.body.appendChild(ta); ta.select();
       var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
       ta.remove();
-      if (ok) toast('コピーしました（' + mem.length + '件）。ジャービスやLINEに貼り付けてください');
+      if (ok) done();
       else { var w = window.open('', '_blank'); if (w) { w.document.write('<pre style="white-space:pre-wrap;font:14px/1.7 sans-serif;padding:16px">' + esc(text) + '</pre>'); } }
     }
+    function done() {
+      toast('コピーしました（' + mem.length + '件）。ジャービスやLINEに貼り付けてください');
+      // 送った指示が次回のコピーに重複して入らないよう、消すかどうかを確認
+      setTimeout(function () {
+        if (confirm('コピーしました（' + mem.length + '件）。\n\n貼り付けて送ったら、この指示は一覧から消しますか？\n（消すと、次回のコピーに今回の指示が重複して入りません）\n\n［OK］消す　［キャンセル］残しておく')) {
+          mem = []; save(); drawPins(); renderPanel(); toast('一覧を空にしました');
+        }
+      }, 400);
+    }
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).then(function () { toast('コピーしました（' + mem.length + '件）。ジャービスやLINEに貼り付けてください'); }, fallback);
+      navigator.clipboard.writeText(text).then(done, fallback);
     } else fallback();
   }
 

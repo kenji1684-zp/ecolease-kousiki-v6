@@ -1448,3 +1448,7 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 /* 円の外側の工程名（03 資材準備・出荷／06 解体・回収）が右の一覧や画面端にかからないよう、図に左右の余白 */
 /* 修正指示 2026-11-20 15:20：円の外側の工程名（見積り〜清掃・整備の7つ）を削除。右の一覧と重複のため */
 .ac-lbl{display:none}
+/* 修正指示 2026-11-20 15:25：TOP採用帯の職種「工事課（施工管理）／中途採用・正社員」を点滅 */
+.top-rc-now span{animation:rcNowBlink 1.6s ease-in-out infinite}
+@keyframes rcNowBlink{0%,100%{opacity:1}50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.top-rc-now span{animation:none}}
