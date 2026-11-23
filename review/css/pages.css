@@ -1623,3 +1623,17 @@ br.sp-br2{display:none}
 
 /* 2026-11-23 設備写真（設備写真.zip）に差し替え：img/equip/。背景の大きな写真はPC＝横長・スマホ＝縦長を出し分け（<picture>） */
 .jg-pin-bg picture,.v5-band-bg picture{display:block;width:100%;height:100%}
+
+/* 修正指示 2026-11-23 13:50（TOP 取扱設備）：6枚を背景透過の切り抜き写真に（img/equip/cut/*.webp）。
+   写真は枠いっぱいに敷かず、淡い緑の台の上に設備が乗って見えるカードに変更 */
+#equip .equip-card{display:flex;flex-direction:column;aspect-ratio:auto;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+#equip .equip-card img{
+  display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:contain;opacity:1;
+  padding:22px 22px 10px;box-sizing:border-box;
+  background:radial-gradient(70% 22% at 50% 92%,rgba(40,70,20,.16),transparent 70%),linear-gradient(180deg,#fff 0%,var(--green-mist) 100%);
+  transition:transform .6s var(--ease);
+}
+#equip .equip-card:hover img{transform:translateY(-4px) scale(1.03)}
+#equip .equip-card .cap{position:static;background:none;padding:14px 18px 18px;color:var(--ink);border-top:1px solid var(--line)}
+#equip .equip-card .cap h4{color:var(--ink);font-size:18px}
+#equip .equip-card .cap .cat{color:var(--accent-deep,#5a8f1f)}
