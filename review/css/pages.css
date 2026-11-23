@@ -1620,3 +1620,6 @@ br.sp-br2{display:none}
   .cta-band h2{font-size:min(28px,calc((100vw - 2 * var(--gutter)) / 13.4))}
   .cta-band h2.cta-fit1{font-size:min(48px,calc((100vw - 2 * var(--gutter)) / var(--fit,21.6)))}
 }
+
+/* 2026-11-23 設備写真（設備写真.zip）に差し替え：img/equip/。背景の大きな写真はPC＝横長・スマホ＝縦長を出し分け（<picture>） */
+.jg-pin-bg picture,.v5-band-bg picture{display:block;width:100%;height:100%}
