@@ -1682,3 +1682,40 @@ br.sp-br2{display:none}
 /* 修正指示 2026-11-23 15:08（設備レンタル 冒頭の写真）：余白が目立つため、室外機をアップ気味に（枠いっぱいに広げ、左右を少しトリミング） */
 .jg-pin--cut .jg-pin-bg img{object-fit:cover;object-position:42% 100%;padding:9vh 0 4vh}
 @media(max-width:900px){.jg-pin--cut .jg-pin-bg img{object-fit:cover;object-position:50% 100%;padding:24vh 0 8vh}}
+/* 修正指示 2026-11-23 15:26（設備リース・設備レンタル「ご利用の流れ」）：
+   PCはビルメンテナンス「ご契約までの流れ」と同じ形式（横並びカード・矢印・順番に点灯）に。文言はそのまま。
+   スマホ（〜899px）は先ほどの中央揃え（番号を縦一直線）のまま */
+@media(min-width:900px){
+  .flow.flow-h.flow-c .fl-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;row-gap:20px;
+    padding:clamp(30px,2.8vw,40px) clamp(18px,1.8vw,26px) clamp(28px,2.6vw,36px)}
+  .flow.flow-h.flow-c .fl-item > div:not(.fl-n){display:block}
+  .flow.flow-h.flow-c .fl-item .fl-n{width:72px;height:72px;font-size:26px}
+  .flow.flow-h.flow-c .fl-item h4{width:auto;white-space:normal;text-align:center;font-size:clamp(19px,1.7vw,22px);line-height:1.5;margin-bottom:12px}
+  .flow.flow-h.flow-c .fl-item p{max-width:none;font-size:15px;line-height:1.95}
+}
+/* 設備リースは5工程：PC広い画面は5列、点灯は5秒で1周 */
+@media(min-width:1100px){
+  .flow.flow-h.fl5{grid-template-columns:repeat(5,1fr);gap:clamp(18px,1.8vw,28px)}
+  .flow.flow-h.fl5 .fl-item{padding-inline:clamp(14px,1.3vw,20px)}
+  .flow.flow-h.fl5 .fl-item:not(:last-child)::after{right:calc(-1 * clamp(18px,1.8vw,28px) / 2 - 7px)}
+  .flow.flow-h.fl5 .fl-item h4{font-size:clamp(18px,1.45vw,21px)}
+}
+.flow.flow-h.fl5 .fl-item .fl-n{animation-name:flowLamp5;animation-duration:5s}
+.flow.flow-h.fl5 .fl-item:nth-child(5) .fl-n{animation-delay:4s}
+@keyframes flowLamp5{
+  0%,18%{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 0 0 7px rgba(140,198,63,.22),0 0 22px 4px rgba(140,198,63,.55)}
+  22%,100%{background:var(--green-mist);border-color:var(--green);color:var(--green-deep);box-shadow:none}
+}
+@media(min-width:900px){
+  .flow.flow-h.fl5 .fl-item{animation-name:flowCard5;animation-duration:5s}
+  .flow.flow-h.fl5 .fl-item:nth-child(5){animation-delay:4s}
+  @keyframes flowCard5{
+    0%,18%{border-color:#b9dc85;box-shadow:0 28px 60px -36px rgba(80,140,30,.6)}
+    22%,100%{border-color:var(--line);box-shadow:0 24px 50px -42px rgba(30,60,20,.55)}
+  }
+}
+@media(min-width:900px){
+  .flow.flow-h.flow-c .fl-item{justify-content:flex-start}
+  .flow.flow-h.flow-c .fl-item p{word-break:keep-all;overflow-wrap:anywhere}
+}
+@media(min-width:1100px){.flow.flow-h.fl5 .fl-item p{font-size:14px;line-height:1.9}}
