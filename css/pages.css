@@ -1610,3 +1610,13 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 /* 修正指示 2026-11-23 12:39（事業案内・スマホ）：CTA見出しを「どの設備が必要か、／ご相談ください。」の2行に（スマホのみ改行。共通クラス br.sp-br2） */
 br.sp-br2{display:none}
 @media(max-width:860px){br.sp-br2{display:inline}}
+/* 修正指示 2026-11-23 12:51（全ページのページ下CTA見出し）：スマホで言葉の途中で改行しないよう、文節ごとにまとめる（例：設備リースのご相談は／こちら。） */
+.cta-band h2 .cp{display:inline-block}
+/* 同上：CTAの説明文も文節ごとにまとめ、1〜2文字だけ次の行に落ちないように */
+.cta-band .cta-lead .cp{display:inline-block}
+/* スマホではCTA見出しの一番長い文節（例「お気軽にご相談ください。」12文字）が1行に収まる文字サイズに */
+.cta-band h2 .cp{white-space:nowrap}
+@media(max-width:600px){
+  .cta-band h2{font-size:min(28px,calc((100vw - 2 * var(--gutter)) / 13.4))}
+  .cta-band h2.cta-fit1{font-size:min(48px,calc((100vw - 2 * var(--gutter)) / var(--fit,21.6)))}
+}
