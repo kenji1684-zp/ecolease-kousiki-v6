@@ -1674,3 +1674,8 @@ br.sp-br2{display:none}
 @media(max-width:900px){.jg-pin--cut .jg-pin-bg img{padding:16vh 0 9vh}}
 .jg-pin--cut .jg-pin-bg img{transform:scale(calc(1.03 - .03 * var(--p)))}
 @media(max-width:900px){.jg-pin--cut .jg-pin-bg img{padding:18vh 14vw 11vh}}
+/* 修正指示 2026-11-23 15:03（設備レンタル 冒頭の写真）：#351 に変更。室外機がずらりと並ぶ様子をそのまま背景透過で
+   （左右は写真の端で切れるため、ふわっと消えるようにしている）。スマホは手前の室外機を中心に大きく表示 */
+.jg-pin--cut .jg-pin-bg{background:radial-gradient(60% 8% at 52% 90%,rgba(40,70,20,.2),transparent 70%),linear-gradient(180deg,#fff 0%,var(--green-mist) 58%,var(--green-wash) 100%)}
+.jg-pin--cut .jg-pin-bg img{object-fit:contain;object-position:50% 100%;padding:14vh 2vw 7vh}
+@media(max-width:900px){.jg-pin--cut .jg-pin-bg img{object-fit:cover;object-position:40% 100%;padding:44vh 0 15vh}}
