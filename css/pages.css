@@ -1607,3 +1607,6 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 }
 /* 2026-11-23 12:26：スマホ3行目「設備の一生に寄り添い、“捨てない”循環を担います。」（25文字）が1行に収まるよう、狭い画面では文字サイズを自動調整（最小13px。それより狭い画面は文節で折り返し） */
 @media(max-width:480px){.page-hero .jg-lead{font-size:clamp(13px,calc((100vw - 2 * var(--gutter)) / 26.6),15px)}}
+/* 修正指示 2026-11-23 12:39（事業案内・スマホ）：CTA見出しを「どの設備が必要か、／ご相談ください。」の2行に（スマホのみ改行。共通クラス br.sp-br2） */
+br.sp-br2{display:none}
+@media(max-width:860px){br.sp-br2{display:inline}}
