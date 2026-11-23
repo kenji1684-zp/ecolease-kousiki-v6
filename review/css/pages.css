@@ -1599,3 +1599,10 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
   .page-hero .ph-inner:has(.jg-lead){grid-template-columns:auto 1fr}
   .page-hero .jg-lead{justify-self:end;white-space:nowrap}
 }
+/* 修正指示 2026-11-23 12:20（事業案内・スマホ）：説明文をスマホでは4行に（…「設備レンタル」／「ビルメンテナンス」の3つの事業で、／設備の一生に寄り添い、／“捨てない”循環を担います。） */
+.page-hero .jg-lead br.jg-sp{display:none}
+@media(max-width:860px){
+  .page-hero .jg-lead br.jg-sp{display:inline}
+  .page-hero .jg-lead br.jg-pc{display:none}
+}
+@media(max-width:420px){.page-hero .jg-lead{font-size:min(15px,calc((100vw - 2 * var(--gutter)) / 22.6))}}
