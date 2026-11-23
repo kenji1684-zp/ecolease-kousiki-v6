@@ -1591,3 +1591,11 @@ html.anim .wk-map:not(.in) .wk-ttl span,html.anim .wk-map:not(.in) .wk-sub{opaci
 .rc-tel small{font-size:clamp(14px,1.1vw,15px)}
 
 @media (prefers-reduced-motion:reduce){.rc-point,#rc-voice .iv .meta .dept{animation:none}}
+/* 修正指示 2026-11-23 12:13（事業案内）：ページ上部の説明文。「ビルメンテナンス」の後で改行、文節の途中では折り返さない */
+.page-hero .jg-lead{max-width:none}
+.page-hero .jg-lead .mph{display:inline-block}
+/* PCでは1行目「…「ビルメンテナンス」の」が折り返さないよう、説明文の列を左へ広げる */
+@media(min-width:861px){
+  .page-hero .ph-inner:has(.jg-lead){grid-template-columns:auto 1fr}
+  .page-hero .jg-lead{justify-self:end;white-space:nowrap}
+}
