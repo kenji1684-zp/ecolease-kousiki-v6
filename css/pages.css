@@ -1719,3 +1719,12 @@ br.sp-br2{display:none}
   .flow.flow-h.flow-c .fl-item p{word-break:keep-all;overflow-wrap:anywhere}
 }
 @media(min-width:1100px){.flow.flow-h.fl5 .fl-item p{font-size:14px;line-height:1.9}}
+
+/* ===== 修正指示 2026-11-23 15:40（会社概要） ===== */
+/* 「エコリースが成長すれば、環境はどんどん良くなっていく。」を大きく */
+#philosophy .ph-strong{font-size:1.25em;line-height:1.7;color:var(--ink)}
+/* 「エコリースを、2分で。」を大きく */
+#movie .sec-head .mv-ttl{font-size:clamp(22px,2.3vw,30px);letter-spacing:.06em}
+/* 動画の再生ボタン（PLAY MOVIE の円）：中央だとタイトル「未来の誰かのために」に重なるため右下へ */
+.movie-stage .v4-circle{left:auto;top:auto;right:clamp(14px,3vw,40px);bottom:clamp(14px,3vw,40px);transform:none}
+@media(max-width:600px){.movie-stage .v4-circle{width:84px;right:8px;bottom:8px}.movie-stage .v4-circle .ring text{font-size:9.4px}}
