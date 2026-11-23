@@ -1728,3 +1728,5 @@ br.sp-br2{display:none}
 /* 動画の再生ボタン（PLAY MOVIE の円）：中央だとタイトル「未来の誰かのために」に重なるため右下へ */
 .movie-stage .v4-circle{left:auto;top:auto;right:clamp(14px,3vw,40px);bottom:clamp(14px,3vw,40px);transform:none}
 @media(max-width:600px){.movie-stage .v4-circle{width:84px;right:8px;bottom:8px}.movie-stage .v4-circle .ring text{font-size:9.4px}}
+/* 修正指示 2026-11-23 15:44（会社概要 動画）：「エコリースを、2分で。」を英字「Movie」の高さの中央にそろえる */
+#movie .sec-head .mv-ttl{align-self:center;padding-bottom:0}
