@@ -1667,3 +1667,10 @@ br.sp-br2{display:none}
   .flow.flow-c .fl-item h4{grid-column:3;width:10.6em;white-space:nowrap;text-align:left}
   .flow.flow-c .fl-item p{grid-column:1 / -1}
 }
+/* 修正指示 2026-11-23 14:58（設備レンタル 冒頭の写真）：#350（空調室外機）を背景透過で。
+   写真を全面に敷かず、淡い緑の台の上に室外機を立たせる（スクロールで暗幕→文字が浮かぶ動きは従来どおり） */
+.jg-pin--cut .jg-pin-bg{background:radial-gradient(26% 7% at 50% 91%,rgba(40,70,20,.22),transparent 70%),linear-gradient(180deg,#fff 0%,var(--green-mist) 62%,var(--green-wash) 100%)}
+.jg-pin--cut .jg-pin-bg img{object-fit:contain;object-position:50% 100%;padding:13vh 0 8vh;box-sizing:border-box}
+@media(max-width:900px){.jg-pin--cut .jg-pin-bg img{padding:16vh 0 9vh}}
+.jg-pin--cut .jg-pin-bg img{transform:scale(calc(1.03 - .03 * var(--p)))}
+@media(max-width:900px){.jg-pin--cut .jg-pin-bg img{padding:18vh 14vw 11vh}}
