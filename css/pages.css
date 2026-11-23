@@ -1645,3 +1645,10 @@ br.sp-br2{display:none}
 .biz-media:has(img[src*="equip/cut/"]) .num{color:var(--green-deep);opacity:.35;text-shadow:none}
 /* 修正指示 2026-11-23 14:34（設備リース「リース対応設備の一例」）：4枚なのでPCは4列で1段に（3列だと1枚だけ2段目に残るため） */
 @media(min-width:1000px){.equip-grid.eq-cut{grid-template-columns:repeat(4,1fr)}.eq-cut .equip-card .cap h4{font-size:17px}}
+/* 修正指示 2026-11-23 14:37（設備リース「ご利用の流れ」）：01〜05を中央揃えに。
+   1行目に「番号＋見出し」、その下に説明文を中央で */
+.flow.flow-c .fl-item{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:18px;row-gap:12px;text-align:center;padding:30px 0}
+.flow.flow-c .fl-item > div:not(.fl-n){display:contents}
+.flow.flow-c .fl-item h4{margin-bottom:0}
+.flow.flow-c .fl-item p{flex-basis:100%;max-width:44em;margin-inline:auto}
+@media(max-width:600px){.flow.flow-c .fl-item{column-gap:14px}.flow.flow-c .fl-item .fl-n{width:46px;height:46px;font-size:17px}.flow.flow-c .fl-item h4{font-size:17.5px}}
