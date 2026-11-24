@@ -1763,3 +1763,5 @@ br.sp-br2{display:none}
 .focus-list .no{flex:none;font-family:var(--latin);font-weight:600;font-size:18px;color:var(--green-deep);letter-spacing:.04em;min-width:1.6em}
 @media(max-width:600px){.focus-list li{gap:14px;font-size:15px;padding:12px 2px}}
 .acc .acc-body .focus-list{padding-left:0;margin:16px 0 0}.acc .acc-body .focus-list li{margin:0}
+/* 修正指示 2026-11-24 15:33（SDGs リード見出し）：2行目も黒、「捨てない」「SDGs」だけ緑 */
+.lead-block h2.sdg-lead em{color:var(--ink)}
