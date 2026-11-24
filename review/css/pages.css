@@ -1765,3 +1765,6 @@ br.sp-br2{display:none}
 .acc .acc-body .focus-list{padding-left:0;margin:16px 0 0}.acc .acc-body .focus-list li{margin:0}
 /* 修正指示 2026-11-24 15:33（SDGs リード見出し）：2行目も黒、「捨てない」「SDGs」だけ緑 */
 .lead-block h2.sdg-lead em{color:var(--ink)}
+/* 修正指示 2026-11-24 15:43（プライバシーポリシー）：ページ見出しを1行に（画面幅に合わせて文字サイズを自動調整） */
+.page-hero h1.ph-1l{white-space:nowrap;font-size:min(52px,4vw)}
+@media(max-width:900px){.page-hero h1.ph-1l{font-size:min(44px,calc((100vw - 2 * var(--gutter)) / 11))}}
