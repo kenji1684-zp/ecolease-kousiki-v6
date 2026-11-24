@@ -1772,3 +1772,7 @@ br.sp-br2{display:none}
 .policy-toc .en{font-size:22px;letter-spacing:.08em;color:var(--ink);margin-bottom:14px}
 /* 修正指示 2026-11-24 16:01（採用情報）：プラカード人物の仮写真。スマホで横長に切られても顔とプラカードが入るように */
 @media(max-width:900px){#rc-voice .iv .ph:has(img[src*="placard_"]){--r:4/5;max-width:340px;margin-inline:auto;width:100%}}
+/* 修正指示 2026-11-24 16:33（社員インタビュー）：部署名を点滅（採用情報「先輩の声」と同じ）／入社年・役職を大きく */
+[id^="iv-"] .meta .dept{font-size:clamp(15px,1.3vw,17px);padding:6px 14px;animation:rcDeptBlink 1.6s ease-in-out infinite}
+[id^="iv-"] .meta .yr{font-size:clamp(15px,1.3vw,17px);color:var(--ink-soft);letter-spacing:.04em}
+@media (prefers-reduced-motion:reduce){[id^="iv-"] .meta .dept{animation:none}}
