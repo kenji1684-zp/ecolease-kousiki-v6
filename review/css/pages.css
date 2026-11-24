@@ -1776,3 +1776,9 @@ br.sp-br2{display:none}
 [id^="iv-"] .meta .dept{font-size:clamp(15px,1.3vw,17px);padding:6px 14px;animation:rcDeptBlink 1.6s ease-in-out infinite}
 [id^="iv-"] .meta .yr{font-size:clamp(15px,1.3vw,17px);color:var(--ink-soft);letter-spacing:.04em}
 @media (prefers-reduced-motion:reduce){[id^="iv-"] .meta .dept{animation:none}}
+/* 修正指示 2026-11-24 16:38（データで見るエコリース）：見出し11文字を1行に／災害派遣の年表を大きく */
+.page-hero h1.ph-1l.n11{font-size:min(48px,3.6vw)}
+@media(max-width:900px){.page-hero h1.ph-1l.n11{font-size:min(42px,calc((100vw - 2 * var(--gutter)) / 12))}}
+.timeline-mini{font-size:16px;gap:4px}
+.timeline-mini li{grid-template-columns:4em 1fr;padding:9px 0}
+.timeline-mini li b{font-size:18px}
