@@ -1749,3 +1749,6 @@ br.sp-br2{display:none}
 .wk-region .wk-rhead{margin-top:6px}
 /* 修正指示 2026-11-24 14:34（施工実績「数字で見る」）：カード下の注記（全国47都道府県中 など）を大きく（11px → 14px） */
 #data .data-card .as{font-size:14px;color:var(--ink-soft);letter-spacing:.05em}
+/* 修正指示 2026-11-24 14:43（お問い合わせ）：会社名を大きく（14.5px → 20px）／電話番号を太字に */
+.contact-aside .addr b{font-size:20px;letter-spacing:.06em;margin-bottom:8px}
+.contact-aside .tel-card .tel{font-weight:700}
