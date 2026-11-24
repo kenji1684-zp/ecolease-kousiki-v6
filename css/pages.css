@@ -1754,3 +1754,6 @@ br.sp-br2{display:none}
 .contact-aside .tel-card .tel{font-weight:700}
 /* 修正指示 2026-11-24 14:49（再リース）：循環図の中央は英字を削除し「再リースの循環」を英字と同じ大きさで中央に */
 .rl-ring .center-jp{font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:.08em;fill:var(--ink)}
+/* 修正指示 2026-11-24 15:08（保有資格）：リード見出しは「電気・防災・給排水・空調」を緑（TOP「未来」と同色）、2行目は黒／カードの分類タグ（国家資格・民間資格）を大きく */
+.lead-block h2.lic-lead em{color:var(--ink)}
+.lic-card .cat span.k{font-size:14px;padding:4px 14px;letter-spacing:.1em}
