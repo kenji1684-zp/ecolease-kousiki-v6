@@ -1747,3 +1747,5 @@ br.sp-br2{display:none}
 /* 修正指示 2026-11-24 14:28（施工実績「地方別の実績」）：「○県中○県で実績あり」を削除し、「公共 ○ ／ 民間 ○」を大きく（11px → 15px） */
 .wk-pp small{font-size:15px;color:var(--ink-soft);letter-spacing:.04em}
 .wk-region .wk-rhead{margin-top:6px}
+/* 修正指示 2026-11-24 14:34（施工実績「数字で見る」）：カード下の注記（全国47都道府県中 など）を大きく（11px → 14px） */
+#data .data-card .as{font-size:14px;color:var(--ink-soft);letter-spacing:.05em}
