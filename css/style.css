@@ -1,3 +1,10 @@
+/* 修正指示 2026-11-24 14:05（全ページ）：数字の書体を本文（FAX番号）と同じ Noto Serif JP に統一。
+   数字と記号（+ , - . / % :）だけをこの書体で表示し、英字・漢字はそれぞれの書体のまま（fonts/ 内、SIL OFL 1.1） */
+@font-face{font-family:"EcoDigits";font-style:normal;font-weight:300;font-display:swap;src:url(../fonts/eco-digits-300.woff2) format("woff2");unicode-range:U+0030-0039,U+002B-002F,U+0025,U+003A}
+@font-face{font-family:"EcoDigits";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/eco-digits-400.woff2) format("woff2");unicode-range:U+0030-0039,U+002B-002F,U+0025,U+003A}
+@font-face{font-family:"EcoDigits";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/eco-digits-500.woff2) format("woff2");unicode-range:U+0030-0039,U+002B-002F,U+0025,U+003A}
+@font-face{font-family:"EcoDigits";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/eco-digits-600.woff2) format("woff2");unicode-range:U+0030-0039,U+002B-002F,U+0025,U+003A}
+@font-face{font-family:"EcoDigits";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/eco-digits-700.woff2) format("woff2");unicode-range:U+0030-0039,U+002B-002F,U+0025,U+003A}
 /* Webフォントは各HTMLの <link> で読み込み（@importより高速・確実） */
 
 /* =========================================================
@@ -24,9 +31,9 @@
   --green-mist:#f5faea;
   --orange:#ef8a3c;       /* logo katakana — used very sparingly */
 
-  --serif:"Shippori Mincho","Noto Serif JP","Yu Mincho","YuMincho","Hiragino Mincho ProN","Hiragino Mincho Pro","MS PMincho",serif;
+  --serif:"EcoDigits","Shippori Mincho","Noto Serif JP","Yu Mincho","YuMincho","Hiragino Mincho ProN","Hiragino Mincho Pro","MS PMincho",serif;
   --serif-body:"Noto Serif JP","Shippori Mincho","Yu Mincho","YuMincho","Hiragino Mincho ProN","MS PMincho",serif;
-  --latin:"Cormorant Garamond",serif;
+  --latin:"EcoDigits","Cormorant Garamond",serif;
 
   --maxw:1200px;
   --gutter:clamp(20px,5vw,64px);
