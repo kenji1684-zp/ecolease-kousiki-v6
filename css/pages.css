@@ -1768,3 +1768,5 @@ br.sp-br2{display:none}
 /* 修正指示 2026-11-24 15:43（プライバシーポリシー）：ページ見出しを1行に（画面幅に合わせて文字サイズを自動調整） */
 .page-hero h1.ph-1l{white-space:nowrap;font-size:min(52px,4vw)}
 @media(max-width:900px){.page-hero h1.ph-1l{font-size:min(44px,calc((100vw - 2 * var(--gutter)) / 11))}}
+/* 修正指示 2026-11-24 15:44（プライバシーポリシー 目次）：「Contents」を大きく（11px → 22px） */
+.policy-toc .en{font-size:22px;letter-spacing:.08em;color:var(--ink);margin-bottom:14px}
