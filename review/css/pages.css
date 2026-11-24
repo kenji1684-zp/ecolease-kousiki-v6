@@ -1757,3 +1757,9 @@ br.sp-br2{display:none}
 /* 修正指示 2026-11-24 15:08（保有資格）：リード見出しは「電気・防災・給排水・空調」を緑（TOP「未来」と同色）、2行目は黒／カードの分類タグ（国家資格・民間資格）を大きく */
 .lead-block h2.lic-lead em{color:var(--ink)}
 .lic-card .cat span.k{font-size:14px;padding:4px 14px;letter-spacing:.1em}
+/* 修正指示 2026-11-24 15:19（環境方針「重点的に取り組む5項目」）：カードを廃止し、番号付きの一覧（01〜05）に */
+.focus-list{list-style:none;margin:16px 0 0;padding:0;border-top:1px solid var(--line)}
+.focus-list li{display:flex;align-items:baseline;gap:18px;padding:14px 4px;border-bottom:1px solid var(--line);font-size:16px;line-height:1.8;color:var(--ink)}
+.focus-list .no{flex:none;font-family:var(--latin);font-weight:600;font-size:18px;color:var(--green-deep);letter-spacing:.04em;min-width:1.6em}
+@media(max-width:600px){.focus-list li{gap:14px;font-size:15px;padding:12px 2px}}
+.acc .acc-body .focus-list{padding-left:0;margin:16px 0 0}.acc .acc-body .focus-list li{margin:0}
