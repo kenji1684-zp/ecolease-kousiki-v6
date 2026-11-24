@@ -1770,3 +1770,5 @@ br.sp-br2{display:none}
 @media(max-width:900px){.page-hero h1.ph-1l{font-size:min(44px,calc((100vw - 2 * var(--gutter)) / 11))}}
 /* 修正指示 2026-11-24 15:44（プライバシーポリシー 目次）：「Contents」を大きく（11px → 22px） */
 .policy-toc .en{font-size:22px;letter-spacing:.08em;color:var(--ink);margin-bottom:14px}
+/* 修正指示 2026-11-24 16:01（採用情報）：プラカード人物の仮写真。スマホで横長に切られても顔とプラカードが入るように */
+@media(max-width:900px){#rc-voice .iv .ph:has(img[src*="placard_"]){--r:4/5;max-width:340px;margin-inline:auto;width:100%}}
