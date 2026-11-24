@@ -1752,3 +1752,5 @@ br.sp-br2{display:none}
 /* 修正指示 2026-11-24 14:43（お問い合わせ）：会社名を大きく（14.5px → 20px）／電話番号を太字に */
 .contact-aside .addr b{font-size:20px;letter-spacing:.06em;margin-bottom:8px}
 .contact-aside .tel-card .tel{font-weight:700}
+/* 修正指示 2026-11-24 14:49（再リース）：循環図の中央は英字を削除し「再リースの循環」を英字と同じ大きさで中央に */
+.rl-ring .center-jp{font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:.08em;fill:var(--ink)}
