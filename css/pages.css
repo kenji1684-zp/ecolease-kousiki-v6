@@ -1730,3 +1730,6 @@ br.sp-br2{display:none}
 @media(max-width:600px){.movie-stage .v4-circle{width:84px;right:8px;bottom:8px}.movie-stage .v4-circle .ring text{font-size:9.4px}}
 /* 修正指示 2026-11-23 15:44（会社概要 動画）：「エコリースを、2分で。」を英字「Movie」の高さの中央にそろえる */
 #movie .sec-head .mv-ttl{align-self:center;padding-bottom:0}
+/* 修正指示 2026-11-24 13:49（ビルメンテナンス「おもなサービス」）：カード見出しを大きく（スマホ 18px → 22px。PCも設備リースと同じ大きさに） */
+#maint-services .feat-card h4{font-size:clamp(20px,1.9vw,23px);margin-bottom:12px}
+@media(max-width:767px){#maint-services .feat-card h4{font-size:22px}}
