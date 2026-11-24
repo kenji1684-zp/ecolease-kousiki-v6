@@ -1782,3 +1782,5 @@ br.sp-br2{display:none}
 .timeline-mini{font-size:16px;gap:4px}
 .timeline-mini li{grid-template-columns:4em 1fr;padding:9px 0}
 .timeline-mini li b{font-size:18px}
+/* 修正指示 2026-11-24 16:41（お問い合わせ）：電話カードの「TEL」を大きく（11px → 18px） */
+.contact-aside .tel-card .k{font-size:18px;letter-spacing:.16em}
