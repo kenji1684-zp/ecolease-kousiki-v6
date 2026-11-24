@@ -1736,3 +1736,5 @@ br.sp-br2{display:none}
 /* 修正指示 2026-11-24 13:51（設備レンタル「設備レンタルの特徴」）：カード見出しを大きく（設備リース・ビルメンテナンスと同じ大きさ） */
 #rental-features .feat-card h4{font-size:clamp(20px,1.9vw,23px);margin-bottom:12px}
 @media(max-width:767px){#rental-features .feat-card h4{font-size:22px}}
+/* 修正指示 2026-11-24 13:57（フッター・全ページ）：「FAX 088-672-3623」を電話番号（088-672-0441）と同じ書体に統一。文字サイズはそのまま */
+.footer-brand .tel + p{font-family:var(--latin);letter-spacing:.04em}
