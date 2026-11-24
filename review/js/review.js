@@ -26,7 +26,7 @@
   var PAGES = [
     ['index.html', 'トップページ'], ['jigyo.html', '事業案内'], ['lease.html', '設備リース'], ['rental.html', '設備レンタル'],
     ['maintenance.html', 'ビルメンテナンス'], ['works.html', '施工実績'], ['company.html', '会社概要'],
-    ['release.html', 'RE-LEASE 再リースまでの流れ'], ['licence.html', '保有資格'], ['environment.html', '環境方針'],
+    ['release.html', '再リースまでの流れ'], ['licence.html', '保有資格'], ['environment.html', '環境方針'],
     ['sdgs.html', 'SDGsへの取り組み'], ['recruit.html', '採用情報'], ['interview.html', '社員インタビュー'],
     ['data.html', 'データで見るエコリース'], ['news.html', 'お知らせ'], ['news-detail.html', 'お知らせ（記事ページ）'],
     ['contact.html', 'お問い合わせ'], ['privacy.html', 'プライバシーポリシー']
