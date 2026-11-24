@@ -1741,3 +1741,6 @@ br.sp-br2{display:none}
 /* 修正指示 2026-11-24 14:03（全ページ）：お問い合わせ帯の電話番号もFAX番号と同じ書体（本文の明朝）に。文字サイズはそのまま
    ※ 同じ英字書体だった お問い合わせページの電話カード・採用ページの電話番号 もあわせて統一 */
 .cta-band .tel-big,.cta-band .tel-btn b,.contact-aside .tel-card .tel,.rc-tel a{font-family:var(--serif-body)}
+/* 修正指示 2026-11-24 14:21（会社概要「エコリースをもっと知る」）：英字ラベル削除に合わせ、カードの見出しを大きく（16px → 20px） */
+.hub-card .t b{font-size:clamp(18px,1.6vw,20px);line-height:1.5}
+.hub-card .t{padding:20px 22px}
