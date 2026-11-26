@@ -74,3 +74,9 @@ html.kv2-lock{overflow:hidden}
 .kv2-pin{width:38px;height:47px;margin:-47px 0 0 -19px}
 @media(max-width:767px){.kv2-view{aspect-ratio:1/0.9}.kv2-stage{width:150vw;transform:translate(-55%,-50%)}.kv2-pin{width:30px;height:37px;margin:-37px 0 0 -15px}}
 @media(max-width:767px){.kv2-view{aspect-ratio:auto;height:min(118vw,520px)}.kv2-stage{width:190vw;transform:translate(-61%,-50%)}}
+/* 2026-11-26 17:38：背景に空と山を入れたため、地の色を空色に／コピー背後のぼかしを白系に */
+.kv2{background:#cfeaf8}
+.kv2-copy::before{background:radial-gradient(closest-side,rgba(240,247,235,.9),rgba(240,247,235,.65) 60%,rgba(240,247,235,0))}
+.kv2-stage{transform:translate(-50%,-45%)}
+@media(max-width:767px){.kv2-view{margin-top:0;height:min(135vw,580px)}.kv2-stage{transform:translate(-61%,-46%)}}
+@media(max-width:767px){.kv2-view{margin-top:56px;height:125vw;min-height:0}.kv2-stage{width:210vw;transform:translate(-61%,-50%)}}
