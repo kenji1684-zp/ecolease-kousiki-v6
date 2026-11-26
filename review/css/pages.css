@@ -1816,3 +1816,5 @@ br.sp-br2{display:none}
 #strengths .st-lead{max-width:40em;margin:22px auto 0;text-align:center;font-size:clamp(15px,1.4vw,18px);line-height:2;color:var(--ink)}
 #strengths .st-sub{text-align:center;margin:clamp(30px,3.4vw,44px) 0 18px;font-family:var(--serif);font-weight:700;font-size:clamp(18px,1.6vw,21px);letter-spacing:.1em;color:var(--green-deep)}
 #strengths .st-sub b{font-size:1.5em;color:var(--accent);margin:0 2px}
+/* 修正指示 2026-11-26 17:05（TOP）：「選ばれる4つの理由」を大きく */
+#strengths .st-sub{font-size:clamp(24px,2.4vw,32px);margin-top:clamp(36px,4vw,56px);margin-bottom:24px}
