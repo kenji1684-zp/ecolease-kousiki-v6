@@ -84,3 +84,24 @@ html.kv2-lock{overflow:hidden}
 .kv2{background:#e7f2d6}
 .kv2-stage{aspect-ratio:1600/1120;width:max(100vw,calc(100svh * 1.4286));transform:translate(-50%,-44%)}
 @media(max-width:767px){.kv2-stage{width:210vw;transform:translate(-61%,-50%)}}
+
+/* ===== 2026-11-26 17:49：TOP（index.html）に反映。背景はイラスト＋ピン、左下は従来のコピー ===== */
+.kv2-top .hero-inner{position:absolute;left:0;right:0;bottom:clamp(64px,8vh,96px);z-index:3;min-height:0!important;padding-block:0!important;display:block;pointer-events:none}
+.kv2-top .hero-copy{position:relative;max-width:640px;pointer-events:auto}
+.kv2-top .hero-copy::before{content:"";position:absolute;left:-12%;top:-22%;width:128%;height:146%;z-index:-1;background:radial-gradient(closest-side,rgba(240,247,235,.94),rgba(240,247,235,.75) 60%,rgba(240,247,235,0))}
+.kv2-top::before,.kv2-top::after{display:none!important}
+/* 写真に差し替えたとき（data-kv="photo"）：ピンを消して写真を全面に */
+.kv2-view[data-kv="photo"] .kv2-stage{width:100%;height:100%;aspect-ratio:auto;left:0;top:0;transform:none}
+.kv2-view[data-kv="photo"] .kv2-scene{object-fit:cover;object-position:var(--kv-pos,50% 50%)}
+.kv2-view[data-kv="photo"] .kv2-pin{display:none}
+@media(max-width:767px){
+  .kv2-top .hero-inner{position:relative;bottom:auto;padding:22px 0 8px!important}
+  .kv2-top .hero-copy::before{display:none}
+  .kv2-view[data-kv="photo"]{height:110vw}
+}
+.kv2-top .hero-copy h1{font-size:clamp(36px,4.2vw,64px)!important;line-height:1.3}
+.kv2-top .hero-eyebrow{margin-bottom:14px}
+.kv2-top .hero-cta{margin-top:22px}
+.kv2-top .hero-copy h1{font-size:clamp(32px,3.4vw,52px)!important}
+.kv2-top .hero-copy::before{width:112%;left:-8%}
+.kv2-top .hero-copy{pointer-events:none}.kv2-top .hero-copy a{pointer-events:auto}

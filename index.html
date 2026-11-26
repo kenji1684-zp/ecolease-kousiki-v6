@@ -9,11 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=2026112604">
-<link rel="stylesheet" href="css/v3.css?v=2026112604">
-<link rel="stylesheet" href="css/v4.css?v=2026112604">
-<link rel="stylesheet" href="css/v5.css?v=2026112604">
-<link rel="stylesheet" href="css/pages.css?v=2026112604">
+<link rel="stylesheet" href="css/style.css?v=2026112605">
+<link rel="stylesheet" href="css/v3.css?v=2026112605">
+<link rel="stylesheet" href="css/v4.css?v=2026112605">
+<link rel="stylesheet" href="css/v5.css?v=2026112605">
+<link rel="stylesheet" href="css/kv2.css?v=8">
+<link rel="stylesheet" href="css/pages.css?v=2026112605">
 </head>
 <body data-screen-label="トップページ">
 
@@ -96,8 +97,16 @@
   </div>
 </div>
 <!-- ============ HERO ============ -->
-<section class="hero" data-screen-label="ヒーロー">
-  <div class="wrap-wide hero-inner">
+<section class="hero kv2 kv2-top" data-screen-label="ヒーロー">
+  <!-- ▼ TOPの背景：差し替えは README「TOP背景の差し替え方」参照。
+       イラスト（ピン付き）→ data-kv="illust" ／ 写真に変える → data-kv="photo" にして img の src を写真に -->
+  <div class="kv2-view" data-kv="illust">
+    <div class="kv2-stage">
+      <img class="kv2-scene" src="img/kv/scene.svg?v=5" alt="エコリースが設備を届ける仮設現場のイラスト" width="1600" height="1120">
+      <button type="button" class="kv2-pin" style="left:57.75%;top:48.35%" data-k="warehouse" aria-label="自社倉庫・整備"><span>自社倉庫・整備</span></button><button type="button" class="kv2-pin" style="left:67.07%;top:54.39%" data-k="tank" aria-label="受水槽"><span>受水槽</span></button><button type="button" class="kv2-pin" style="left:55.98%;top:53.45%" data-k="office" aria-label="仮設事務所・校舎の設備"><span>仮設事務所・校舎の設備</span></button><button type="button" class="kv2-pin" style="left:68.17%;top:58.15%" data-k="transformer" aria-label="変圧器"><span>変圧器</span></button><button type="button" class="kv2-pin" style="left:63.29%;top:62.37%" data-k="cubicle" aria-label="キュービクル"><span>キュービクル</span></button><button type="button" class="kv2-pin" style="left:44.15%;top:59.31%" data-k="aircon" aria-label="空調設備"><span>空調設備</span></button><button type="button" class="kv2-pin" style="left:54.38%;top:70.69%" data-k="johkasou" aria-label="浄化槽"><span>浄化槽</span></button><button type="button" class="kv2-pin" style="left:45.55%;top:66.35%" data-k="fire" aria-label="防災設備"><span>防災設備</span></button>
+    </div>
+  </div>
+    <div class="wrap-wide hero-inner">
     <div class="hero-copy reveal">
       <span class="theme-only-b hero" style="display:none"></span>
       <p class="hero-eyebrow">Zero-Waste Business Model<span class="orn" aria-hidden="true"><i></i></span></p>
@@ -537,12 +546,22 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=2026112604"></script>
-<script src="js/motion.js?v=2026112604"></script>
-<script src="js/v3.js?v=2026112604"></script>
-<script src="js/lenis.js?v=2026112604"></script>
-<script src="js/v4.js?v=2026112604"></script>
-<script src="js/v5.js?v=2026112604"></script>
-<script src="js/pages.js?v=2026112604"></script>
+<script src="js/script.js?v=2026112605"></script>
+<script src="js/motion.js?v=2026112605"></script>
+<script src="js/v3.js?v=2026112605"></script>
+<script src="js/lenis.js?v=2026112605"></script>
+<script src="js/v4.js?v=2026112605"></script>
+<script src="js/v5.js?v=2026112605"></script>
+<script src="js/pages.js?v=2026112605"></script>
+<div class="kv2-modal" id="kv2Modal" aria-hidden="true"><div class="kv2-modal-bg" data-close></div><div class="kv2-modal-win" role="dialog" aria-modal="true"><button type="button" class="kv2-modal-x" data-close aria-label="閉じる"></button><div class="kv2-modal-in" id="kv2ModalIn"></div></div></div>
+<template id="kv2-warehouse"><figure class="kv2-m-fig"><img src="img/kv/scene.svg?v=5" alt="" class="crop crop-warehouse"></figure><h3>自社倉庫・整備</h3><p>回収した設備は、自社倉庫で洗浄・点検・整備。捨てずに整えて、もう一度次の現場へ。この循環がエコリースの原点です。</p><a class="btn btn-primary" href="release.html">再リースまでの流れを見る <span class="arr">→</span></a></template><template id="kv2-tank"><figure class="kv2-m-fig"><img src="img/equip/cut/tank.webp" alt="受水槽"></figure><h3>受水槽</h3><p>仮設の建物に水を届ける受水槽。再生・整備した設備を、現場の規模に合わせてリース・レンタルします。</p><a class="btn btn-primary" href="lease.html">設備リースを見る <span class="arr">→</span></a></template><template id="kv2-office"><figure class="kv2-m-fig"><img src="img/kv/scene.svg?v=5" alt="" class="crop crop-office"></figure><h3>仮設事務所・校舎の設備</h3><p>プレハブの事務所や仮設校舎に必要な電気・給排水・空調・防災設備を、見積りから施工・取り外し・引き取りまで一貫して担います。</p><a class="btn btn-primary" href="jigyo.html">事業案内を見る <span class="arr">→</span></a></template><template id="kv2-cubicle"><figure class="kv2-m-fig"><img src="img/equip/cut/cubicle.webp" alt="キュービクル"></figure><h3>キュービクル</h3><p>仮設建物の電気を支える受変電設備。電気工事の有資格者が設置から撤去まで対応します。</p><a class="btn btn-primary" href="lease.html">設備リースを見る <span class="arr">→</span></a></template><template id="kv2-transformer"><figure class="kv2-m-fig"><img src="img/equip/cut/transformer.webp" alt="変圧器"></figure><h3>変圧器</h3><p>電柱からの電気を、現場で使える電圧に。仮設の電気設備をまとめてお任せいただけます。</p><a class="btn btn-primary" href="lease.html">設備リースを見る <span class="arr">→</span></a></template><template id="kv2-aircon"><figure class="kv2-m-fig"><img src="img/equip/cut/aircon.webp" alt="空調設備"></figure><h3>空調設備</h3><p>仮設事務所や校舎の室外機・エアコン。必要な期間だけ、必要な台数をお届けします。</p><a class="btn btn-primary" href="rental.html">設備レンタルを見る <span class="arr">→</span></a></template><template id="kv2-johkasou"><figure class="kv2-m-fig"><img src="img/equip/cut/johkasou.webp" alt="浄化槽"></figure><h3>浄化槽</h3><p>下水道のない現場でも、トイレや手洗いを使えるように。設置から引き取りまで対応します。</p><a class="btn btn-primary" href="rental.html">設備レンタルを見る <span class="arr">→</span></a></template><template id="kv2-fire"><figure class="kv2-m-fig"><img src="img/equip/cut/fire.webp" alt="防災設備"></figure><h3>防災設備</h3><p>消火器・消火栓・自動火災報知設備など。仮設の建物にも、確かな安全を。</p><a class="btn btn-primary" href="jigyo.html">事業案内を見る <span class="arr">→</span></a></template>
+<script>
+(function(){var m=document.getElementById('kv2Modal'),inn=document.getElementById('kv2ModalIn');
+function open(k){var t=document.getElementById('kv2-'+k);if(!t)return;inn.innerHTML='';inn.appendChild(t.content.cloneNode(true));m.classList.add('is-open');m.setAttribute('aria-hidden','false');document.documentElement.classList.add('kv2-lock');}
+function close(){m.classList.remove('is-open');m.setAttribute('aria-hidden','true');document.documentElement.classList.remove('kv2-lock');}
+document.querySelectorAll('.kv2-pin').forEach(function(b){b.addEventListener('click',function(){open(b.dataset.k)})});
+m.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',close)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});})();
+</script>
 </body>
 </html>
