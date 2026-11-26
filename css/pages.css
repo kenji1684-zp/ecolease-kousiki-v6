@@ -1812,3 +1812,7 @@ br.sp-br2{display:none}
 }
 .stock-sec .sec-head .ttl-big,.stock-sec .sec-head h2{color:#fff}
 .stock-sec .stk-ph figcaption{position:absolute;left:10px;top:10px;right:auto;bottom:auto;width:auto;height:auto;display:inline-block;margin:0;line-height:1.5;text-align:left}
+/* 修正指示 2026-11-26 16:58（TOP「エコリースとは」）：見出し変更・リード文追加・「選ばれる4つの理由」へつなげる */
+#strengths .st-lead{max-width:40em;margin:22px auto 0;text-align:center;font-size:clamp(15px,1.4vw,18px);line-height:2;color:var(--ink)}
+#strengths .st-sub{text-align:center;margin:clamp(30px,3.4vw,44px) 0 18px;font-family:var(--serif);font-weight:700;font-size:clamp(18px,1.6vw,21px);letter-spacing:.1em;color:var(--green-deep)}
+#strengths .st-sub b{font-size:1.5em;color:var(--accent);margin:0 2px}
