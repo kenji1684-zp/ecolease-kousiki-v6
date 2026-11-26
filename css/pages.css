@@ -1820,3 +1820,15 @@ br.sp-br2{display:none}
 #strengths .st-sub{font-size:clamp(24px,2.4vw,32px);margin-top:clamp(36px,4vw,56px);margin-bottom:24px}
 /* 修正指示 2026-11-26 17:10（TOP）：「選ばれる4つの理由」削除に合わせ、説明文と4項目の間に余白 */
 #strengths .sec-head + .strength-grid{margin-top:clamp(32px,3.6vw,48px)}
+
+/* ===== 修正指示 2026-11-26 17:14（TOP） ===== */
+/* ヒーロー：縦幅を広く（PCは画面の高さいっぱいに近く） */
+@media(min-width:768px){.hero .hero-inner{min-height:max(560px,calc(100svh - 84px - 54px));padding-block:clamp(60px,8vw,120px)}}
+@media(max-width:767px){.hero .hero-inner{min-height:calc(78svh - 84px)}}
+/* お知らせ：縦幅をコンパクトに（余白と行の高さを詰める） */
+#news.news-sec{padding-block:clamp(36px,4vw,56px)}
+#news .news-head{margin-bottom:10px}
+#news .news-head .jp{font-size:clamp(22px,2.4vw,28px)}
+#news .news-link{padding:10px 4px}
+#news .news-link:hover{padding-inline:12px}
+#news .news-more-row,#news .news-foot{margin-top:14px}
