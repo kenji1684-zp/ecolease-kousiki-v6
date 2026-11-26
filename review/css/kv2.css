@@ -1,0 +1,72 @@
+/* ===== TOP案（2026-11-26）：sunbousai.jp を参考にした、イラスト＋ピンのキービジュアル ===== */
+.kv2{position:relative;padding-top:0;height:100svh;min-height:640px;max-height:1100px;background:#f3f8ec;overflow:hidden}
+.kv2::before,.kv2::after{display:none!important}
+.kv2-view{position:absolute;inset:0;overflow:hidden}
+.kv2-stage{position:absolute;left:50%;top:50%;width:max(100vw,calc(100svh * 1.6));aspect-ratio:16/10;transform:translate(-46%,-48%)}
+.kv2-scene{position:absolute;inset:0;width:100%;height:100%;display:block;user-select:none;animation:kv2In 1.4s cubic-bezier(.22,.61,.36,1) both}
+@keyframes kv2In{from{opacity:0;transform:translateY(24px) scale(1.02)}to{opacity:1;transform:none}}
+/* ピン */
+.kv2-pin{position:absolute;width:44px;height:54px;margin:-54px 0 0 -22px;border:0;padding:0;background:none;cursor:pointer;z-index:2;animation:kv2Drop .7s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(.6s + var(--i,0) * .08s)}
+.kv2-pin::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 54'%3E%3Cpath d='M22 52C22 52 4 32 4 21a18 18 0 0 1 36 0c0 11-18 31-18 31z' fill='%23ea6a2a' stroke='%2323301c' stroke-width='2.2' stroke-linejoin='round'/%3E%3Ccircle cx='22' cy='21' r='9' fill='%23fff' stroke='%2323301c' stroke-width='2'/%3E%3Cpath d='M17 22c3-6 8-7 10-7-1 3-2 9-9 10' fill='%238cc63f' stroke='%2323301c' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .3s cubic-bezier(.3,1.5,.5,1);transform-origin:50% 100%}
+.kv2-pin::after{content:"";position:absolute;left:50%;bottom:-4px;width:18px;height:6px;margin-left:-9px;border-radius:50%;background:rgba(35,48,28,.25);animation:kv2Pulse 2.2s ease-out infinite}
+.kv2-pin span{position:absolute;left:50%;bottom:calc(100% + 6px);transform:translate(-50%,4px);white-space:nowrap;font-size:13px;font-weight:700;letter-spacing:.06em;background:#23301c;color:#fff;padding:5px 12px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s}
+.kv2-pin:hover::before,.kv2-pin:focus-visible::before{transform:scale(1.15) translateY(-4px)}
+.kv2-pin:hover span,.kv2-pin:focus-visible span{opacity:1;transform:translate(-50%,0)}
+@keyframes kv2Drop{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:none}}
+@keyframes kv2Pulse{0%{box-shadow:0 0 0 0 rgba(234,106,42,.45)}80%,100%{box-shadow:0 0 0 14px rgba(234,106,42,0)}}
+.kv2-pin:nth-of-type(2){--i:1}.kv2-pin:nth-of-type(3){--i:2}.kv2-pin:nth-of-type(4){--i:3}.kv2-pin:nth-of-type(5){--i:4}.kv2-pin:nth-of-type(6){--i:5}.kv2-pin:nth-of-type(7){--i:6}.kv2-pin:nth-of-type(8){--i:7}
+/* コピー（左下） */
+.kv2-copy{position:absolute;left:clamp(20px,4.5vw,72px);bottom:clamp(70px,9vh,110px);z-index:3;pointer-events:none}
+.kv2-copy::before{content:"";position:absolute;left:-14%;top:-24%;width:135%;height:150%;z-index:-1;background:radial-gradient(closest-side,rgba(243,248,236,.96),rgba(243,248,236,.85) 55%,rgba(243,248,236,0));}
+.kv2-en{font-family:"Montserrat",sans-serif;font-weight:900;font-size:clamp(56px,8.6vw,138px);line-height:.86;letter-spacing:-.01em;color:#1b2414;margin:0;animation:kv2Up 1s .3s cubic-bezier(.22,.61,.36,1) both}
+.kv2-jp{margin:clamp(14px,1.6vw,22px) 0 0;font-family:var(--serif);font-weight:800;font-size:clamp(20px,2.1vw,32px);letter-spacing:.1em;color:#1b2414;animation:kv2Up 1s .45s cubic-bezier(.22,.61,.36,1) both}
+.kv2-jp .dim{color:var(--accent)}
+.kv2-hint{margin-top:14px;font-size:13px;letter-spacing:.06em;color:var(--ink-soft);display:flex;align-items:center;gap:8px;animation:kv2Up 1s .6s both}
+.kv2-hint i{width:14px;height:17px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 54'%3E%3Cpath d='M22 52C22 52 4 32 4 21a18 18 0 0 1 36 0c0 11-18 31-18 31z' fill='%23ea6a2a'/%3E%3C/svg%3E") center/contain no-repeat}
+@keyframes kv2Up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.kv2 .hero-strip{position:absolute;left:0;right:0;bottom:0;z-index:3}
+/* モーダル（右からスライド） */
+.kv2-modal{position:fixed;inset:0;z-index:1000;visibility:hidden}
+.kv2-modal.is-open{visibility:visible}
+.kv2-modal-bg{position:absolute;inset:0;background:rgba(20,28,16,.45);opacity:0;transition:opacity .4s}
+.kv2-modal.is-open .kv2-modal-bg{opacity:1}
+.kv2-modal-win{position:absolute;top:0;right:0;bottom:0;width:min(560px,94vw);background:#fbf8ef;border-radius:min(240px,30vw) 0 0 0;transform:translateX(105%);transition:transform .55s cubic-bezier(.22,.61,.36,1);overflow:auto;box-shadow:-20px 0 60px -30px rgba(0,0,0,.4)}
+.kv2-modal.is-open .kv2-modal-win{transform:none}
+.kv2-modal-x{position:absolute;top:22px;right:22px;width:44px;height:44px;border-radius:50%;border:2px solid #23301c;background:#fff;cursor:pointer}
+.kv2-modal-x::before,.kv2-modal-x::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:2px;margin:-1px 0 0 -9px;background:#23301c;transform:rotate(45deg)}
+.kv2-modal-x::after{transform:rotate(-45deg)}
+.kv2-modal-in{padding:clamp(90px,12vh,130px) clamp(26px,5vw,56px) 48px}
+.kv2-m-fig{margin:0 0 26px;aspect-ratio:4/3;border-radius:14px;border:2px solid #23301c;background:radial-gradient(60% 50% at 50% 60%,#fff,#e8f2d9);display:grid;place-items:center;overflow:hidden}
+.kv2-m-fig img{width:78%;height:78%;object-fit:contain}
+.kv2-m-fig img.crop{width:100%;height:100%;object-fit:cover}
+.kv2-m-fig img.crop-warehouse{object-position:68% 8%;transform:scale(2.2);transform-origin:68% 10%}
+.kv2-m-fig img.crop-office{object-position:66% 30%;transform:scale(2.2);transform-origin:66% 30%}
+.kv2-modal-in h3{font-family:var(--serif);font-weight:800;font-size:clamp(24px,2.4vw,30px);letter-spacing:.08em;text-align:center;margin-bottom:16px}
+.kv2-modal-in p{font-size:15px;line-height:2;color:var(--ink);margin-bottom:28px}
+.kv2-modal-in .btn{display:flex;width:max-content;margin:0 auto}
+html.kv2-lock{overflow:hidden}
+/* スマホ：イラストを上、コピーを下に */
+@media(max-width:767px){
+  .kv2{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;padding-bottom:56px}
+  .kv2-view{position:relative;inset:auto;height:62svh;min-height:400px;margin-top:64px}
+  .kv2-stage{width:calc(62svh * 1.6);min-width:640px;transform:translate(-56%,-50%)}
+  .kv2-pin{width:36px;height:44px;margin:-44px 0 0 -18px}
+  .kv2-copy{position:relative;left:auto;bottom:auto;padding:22px 20px 8px}
+  .kv2-copy::before{display:none}
+  .kv2-en{font-size:clamp(54px,17vw,84px)}
+  .kv2-modal-win{border-radius:120px 0 0 0}
+}
+@media (prefers-reduced-motion:reduce){.kv2-scene,.kv2-pin,.kv2-en,.kv2-jp,.kv2-hint{animation:none}.kv2-pin::after{animation:none}}
+/* 調整 */
+.kv2-stage{width:max(110vw,calc(100svh * 1.72));transform:translate(-44%,-47%)}
+.kv2 h1.kv2-jp{font-size:clamp(20px,2.1vw,32px)!important;line-height:1.5!important;margin:clamp(14px,1.6vw,22px) 0 0!important;letter-spacing:.1em}
+.kv2-en{font-family:"Montserrat","Arial Black","Helvetica Neue",sans-serif}
+.kv2-copy::before{background:radial-gradient(closest-side,rgba(243,248,236,.92),rgba(243,248,236,.7) 60%,rgba(243,248,236,0))}
+.kv2 .v4-circle{left:auto!important;right:clamp(24px,3vw,48px)!important;top:auto!important;bottom:96px!important;width:150px!important;height:150px!important;transform:none!important}
+.kv2 .v4-circle::before{display:none}
+@media(max-width:767px){.kv2-stage{width:calc(62svh * 1.6);min-width:640px;transform:translate(-56%,-50%)}}
+.kv2-stage{width:max(100vw,calc(100svh * 1.6));transform:translate(-50%,-50%)}
+.kv2 .v4-circle{display:none!important}
+.kv2 .v3-scrollcue{display:none}
+.kv2-modal{z-index:5000}
+@media(max-width:767px){.kv2-view{height:auto;aspect-ratio:1/1.05;min-height:0}.kv2-stage{width:200vw;min-width:0;transform:translate(-62%,-50%)}}
