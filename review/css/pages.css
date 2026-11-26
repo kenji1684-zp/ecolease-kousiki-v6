@@ -1818,3 +1818,5 @@ br.sp-br2{display:none}
 #strengths .st-sub b{font-size:1.5em;color:var(--accent);margin:0 2px}
 /* 修正指示 2026-11-26 17:05（TOP）：「選ばれる4つの理由」を大きく */
 #strengths .st-sub{font-size:clamp(24px,2.4vw,32px);margin-top:clamp(36px,4vw,56px);margin-bottom:24px}
+/* 修正指示 2026-11-26 17:10（TOP）：「選ばれる4つの理由」削除に合わせ、説明文と4項目の間に余白 */
+#strengths .sec-head + .strength-grid{margin-top:clamp(32px,3.6vw,48px)}
