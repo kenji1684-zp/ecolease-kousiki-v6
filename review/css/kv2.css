@@ -80,3 +80,7 @@ html.kv2-lock{overflow:hidden}
 .kv2-stage{transform:translate(-50%,-45%)}
 @media(max-width:767px){.kv2-view{margin-top:0;height:min(135vw,580px)}.kv2-stage{transform:translate(-61%,-46%)}}
 @media(max-width:767px){.kv2-view{margin-top:56px;height:125vw;min-height:0}.kv2-stage{width:210vw;transform:translate(-61%,-50%)}}
+/* 2026-11-26 17:44：平らな土地＋地平線（イラストを 1600×1120 に） */
+.kv2{background:#e7f2d6}
+.kv2-stage{aspect-ratio:1600/1120;width:max(100vw,calc(100svh * 1.4286));transform:translate(-50%,-44%)}
+@media(max-width:767px){.kv2-stage{width:210vw;transform:translate(-61%,-50%)}}
