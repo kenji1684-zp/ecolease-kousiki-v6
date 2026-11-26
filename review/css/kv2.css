@@ -70,3 +70,7 @@ html.kv2-lock{overflow:hidden}
 .kv2 .v3-scrollcue{display:none}
 .kv2-modal{z-index:5000}
 @media(max-width:767px){.kv2-view{height:auto;aspect-ratio:1/1.05;min-height:0}.kv2-stage{width:200vw;min-width:0;transform:translate(-62%,-50%)}}
+/* 2026-11-26 17:34：画角を引いたため、ピンを少し小さく・スマホは全体が入るように */
+.kv2-pin{width:38px;height:47px;margin:-47px 0 0 -19px}
+@media(max-width:767px){.kv2-view{aspect-ratio:1/0.9}.kv2-stage{width:150vw;transform:translate(-55%,-50%)}.kv2-pin{width:30px;height:37px;margin:-37px 0 0 -15px}}
+@media(max-width:767px){.kv2-view{aspect-ratio:auto;height:min(118vw,520px)}.kv2-stage{width:190vw;transform:translate(-61%,-50%)}}
